@@ -10,7 +10,7 @@
 #PBS -m abe 
 #PBS -M Mike.Lake@uts.edu.au
 
-myjobdir=$HOME/src/cuda/
+myjobdir=$HOME/git/cuda/
 
 # This is required for a CUDA program.
 source $myjobdir/set_cuda_env.sh

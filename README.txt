@@ -37,7 +37,7 @@ How to use these files is described below.
 
 Other Files and Directories: 
 "common" is just a copy of the /usr/local/cuda/samples/common/ directory.
-
+But note: this directory is only found if you are logged into a GPU node!
 
 1. Login to a GPU Node 
 ----------------------
@@ -77,7 +77,7 @@ $ source set_cuda_env.sh
 $ cd simpleCUFFT_UTS
 $ make clean
 $ make
-/usr/local/cuda-5.5/bin/nvcc -ccbin g++ -I/usr/local/cuda/samples/common/inc  -m64     -gencode arch=compute_20,code=sm_20 -gencode arch=compute_30,code=sm_30 -gencode arch=compute_35,code=\"sm_35,compute_35\" -o simpleCUFFT.o -c simpleCUFFT.cu
+/usr/local/cuda-5.5/bin/nvcc -ccbin g++ -I/usr/local/cuda/samples/common/inc -m64 -gencode arch=compute_20,code=sm_20 -gencode arch=compute_30,code=sm_30 -gencode arch=compute_35,code=\"sm_35,compute_35\" -o simpleCUFFT.o -c simpleCUFFT.cu
 /usr/local/cuda-5.5/bin/nvcc -ccbin g++ -m64 -o simpleCUFFT simpleCUFFT.o -lcufft
 inode2 simpleCUFFT_UTS/$ 
 $ 
