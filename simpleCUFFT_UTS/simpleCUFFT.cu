@@ -2,7 +2,8 @@
  * Example showing the use of CUFFT for fast 1D-convolution using FFT. 
  * Modified by Mike Lake from:
  * /usr/local/cuda/samples/7_CUDALibraries/simpleCUFFT/simpleCUFFT.cu
- * Version: 2014.05.06
+ * Versions: 
+ * 2014.05.06: Added debugging section.
  */
 
 /*
@@ -26,7 +27,7 @@
 #include <helper_functions.h>
 #include <helper_cuda.h>
 
-FILE *fp;   // MRL added 
+FILE *fp;   // MRL added for debugging section.
 
 // Complex data type
 typedef float2 Complex;
@@ -119,12 +120,13 @@ void runTest(int argc, char **argv)
     checkCudaErrors(cufftPlan1d(&plan, new_size, CUFFT_C2C, 1));
     
     // Debugging by MRL
+    /*
     for (unsigned int i = 0; i < SIGNAL_SIZE; ++i)
     {
         printf("%f %f, ", h_signal[i].x, h_signal[i].y);
         fprintf(fp, "%f\n", h_signal[i].x);
     }
-
+    */
 
     // Transform signal and kernel
     printf("Transforming signal cufftExecC2C\n");
