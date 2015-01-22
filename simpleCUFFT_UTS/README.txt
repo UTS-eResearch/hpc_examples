@@ -77,15 +77,20 @@ Solution: Load env from ../set_cuda_env.sh
   Transforming signal back cufftExecC2C
   $ 
 
+
 Problem: can't find nvcc
 
-hpcnode1 simpleCUFFT_UTS/$ make
-/usr/local/cuda-5.5/bin/nvcc -ccbin g++ -I/usr/local/cuda/samples/common/inc  -m64     -gencode arch=compute_20,code=sm_20 -gencode arch=compute_30,code=sm_30 -gencode arch=compute_35,code=\"sm_35,compute_35\" -o simpleCUFFT.o -c simpleCUFFT.cu
-make: /usr/local/cuda-5.5/bin/nvcc: Command not found
-make: *** [simpleCUFFT.o] Error 127
-hpcnode1 simpleCUFFT_UTS/$ ls
+  hpcnode1 simpleCUFFT_UTS/$ make
+  ... lots of make output then ...
+  nvcc -ccbin g++ -I/usr/local/cuda/samples/common/inc ...etc... -o simpleCUFFT.o -c simpleCUFFT.cu
+  make: /usr/local/cuda-5.5/bin/nvcc: Command not found
+  make: *** [simpleCUFFT.o] Error 127
+  $ 
 
-You are not on a GPU node. 
+Solution: 
+  You are not on a GPU node. In the example above it showed the node as 
+  'hpcnode1' and not 'hpcinode1', that little "i" means an Intel node and only 
+  the Intel nodes have the GPUs installed. 
 
 
 
