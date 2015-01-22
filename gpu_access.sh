@@ -21,7 +21,7 @@
 #PBS -M Mike.Lake@uts.edu.au
 
 # Set the node to start an interactive session on.
-#PBS -l host=hpcinode2
+#PBS -l host=hpcinode1
 
 # Note: all other commands won't work.
 
