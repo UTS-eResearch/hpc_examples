@@ -1,6 +1,10 @@
 How to Compile and Run an FFT Example using CUDA Code on a GPU
 ==============================================================
 
+Author: Mike Lake
+Version: 2015.01.22
+
+
 Introduction
 ------------
 
@@ -39,6 +43,7 @@ Other Files and Directories:
 "common" is just a copy of the /usr/local/cuda/samples/common/ directory.
 But note: this directory is only found if you are logged into a GPU node!
 
+
 1. Login to a GPU Node 
 ----------------------
 
@@ -70,6 +75,7 @@ inode1 $                                        <--- Note it now says inode1
 
 You will now have a shell on inode1.
 
+
 2. Compile and Build your CUDA Code
 -----------------------------------
 
@@ -84,6 +90,7 @@ $
 
 This will have created an executable program "simpleCUFFT". Don't run this yet.
 We have to run it via a normal job submission script. 
+
 
 3. Submit your Job to qsub 
 --------------------------
@@ -102,7 +109,4 @@ You can exit the GPU node. Just type exit.
 You will drop back to the hpcnode1.
 
 
-
-Mike Lake
-May 2014
 
