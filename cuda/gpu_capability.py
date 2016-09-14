@@ -29,5 +29,3 @@ specs = dd.__dict__
 for key in specs.keys():
     print '  ', key, specs[key]
 
-
-
