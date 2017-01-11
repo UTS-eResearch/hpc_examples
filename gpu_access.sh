@@ -14,14 +14,15 @@
 #PBS -q smallq
 
 # Set your interactive wall time limit.
-#PBS -l walltime=00:65:00
+#PBS -l walltime=00:15:00
 
 # Set your email.
 #PBS -m abe 
 #PBS -M Mike.Lake@uts.edu.au
 
 # Set the node to start an interactive session on.
-#PBS -l host=hpcinode1
+####PBS -l host=hpcinode1
+#PBS -l host=ermdc21
 
 # Note: all other commands won't work.
 
