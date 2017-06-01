@@ -83,10 +83,10 @@ if you set walltime=00:01:00 you will have 1 hour.
 
 Now run a PBS interactive job to get onto a GPU node:
 
-hpcnode1 $ qsub -I gpu_access.sh                <-- starting on head node 
-qsub: waiting for job 109267.hpcnode1 to start
-qsub: job 109267.hpcnode1 ready
-inode1 $                                        <--- Note it now says inode1
+    hpcnode1 $ qsub -I gpu_access.sh                <-- starting on head node 
+    qsub: waiting for job 109267.hpcnode1 to start
+    qsub: job 109267.hpcnode1 ready
+    inode1 $                                        <--- Note it now says inode1
 
 You will now have a shell on inode1.
 
@@ -94,14 +94,14 @@ You will now have a shell on inode1.
 2. Compile and Build your CUDA Code
 -----------------------------------
 
-$ source set_cuda_env.sh
-$ cd simpleCUFFT_UTS
-$ make clean
-$ make
-/usr/local/cuda-5.5/bin/nvcc -ccbin g++ -I/usr/local/cuda/samples/common/inc -m64 -gencode arch=compute_20,code=sm_20 -gencode arch=compute_30,code=sm_30 -gencode arch=compute_35,code=\"sm_35,compute_35\" -o simpleCUFFT.o -c simpleCUFFT.cu
-/usr/local/cuda-5.5/bin/nvcc -ccbin g++ -m64 -o simpleCUFFT simpleCUFFT.o -lcufft
-inode2 simpleCUFFT_UTS/$ 
-$ 
+    $ source set_cuda_env.sh
+    $ cd simpleCUFFT_UTS
+    $ make clean
+    $ make
+    /usr/local/cuda-5.5/bin/nvcc -ccbin g++ -I/usr/local/cuda/samples/common/inc -m64 -gencode arch=compute_20,code=sm_20 -gencode arch=compute_30,code=sm_30 -gencode arch=compute_35,code=\"sm_35,compute_35\" -o simpleCUFFT.o -c simpleCUFFT.cu
+    /usr/local/cuda-5.5/bin/nvcc -ccbin g++ -m64 -o simpleCUFFT simpleCUFFT.o -lcufft
+    inode2 simpleCUFFT_UTS/$ 
+    $ 
 
 This will have created an executable program "simpleCUFFT". Don't run this yet.
 We have to run it via a normal job submission script. 
@@ -114,14 +114,12 @@ There is an example qsub submission script in this directory called
 "simpleCUFFT_job.sh". Edit this to be suitable for yourself. 
 Then submit your job.
 
-inode1 $ qsub simpleCUFFT_job.sh
-109275.hpcnode1                  <-- It will show your job normally.
-inode1 $                     
+    inode1 $ qsub simpleCUFFT_job.sh
+    109275.hpcnode1                  <-- It will show your job normally.
+    inode1 $                     
 
-$ qstat -fx 114674.hpcnode1
+    $ qstat -fx 114674.hpcnode1
 
 You can exit the GPU node. Just type exit.
 You will drop back to the hpcnode1.
-
-
 
