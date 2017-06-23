@@ -45,7 +45,7 @@
 #PBS -v NJOBS,NJOB
 #PBS -q smallq
 #PBS -m abe 
-#PBS -M Mike.Lake@uts.edu.au
+#PBS -M Your.Email@uts.edu.au
 
 myjobdir=$HOME/jobs/checkpoint
 cd $myjobdir

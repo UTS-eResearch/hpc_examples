@@ -6,7 +6,7 @@
 #PBS -q smallq
 ###PBS -l host=
 #PBS -m abe 
-#PBS -M Mike.Lake@uts.edu.au
+#PBS -M Your.Email@uts.edu.au
 
 ###PBS -c c=2
 
