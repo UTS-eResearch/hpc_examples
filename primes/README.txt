@@ -13,9 +13,9 @@ Usage:
 
 $ qsub primes_job.sh
 
+or 
 
-$ primes_job_advanced.sh 
-
+$ qsub primes_job_advanced.sh 
 
 Mike Lake
 September 2017
