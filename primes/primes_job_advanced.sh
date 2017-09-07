@@ -8,13 +8,12 @@
 #    number before you try and run this script. 
 # 2. You will also need to set myjobdir to where ever you have placed 
 #    this directory.
-
+#
 # Run this as qsub [options] scriptname
 
 ##################
 # Set PBS Commands 
 # PBS commands must come at the top of this script, before any other commands.
-# maximums: ncps=48, walltime=200:00:00, mem=256GB/48cores
 #################
 
 #PBS -l ncpus=1
@@ -31,7 +30,7 @@
 ###############################
 
 # This is where all your job files for this particular job are located. 
-myjobdir=$HOME/jobs/sample
+myjobdir=$HOME/jobs/primes
 
 ###################################
 # Setup any input files for the run
@@ -43,7 +42,7 @@ myjobdir=$HOME/jobs/sample
 # submitted to by PBS so you may not see it on the head node's /scratch directory. 
 mkdir /scratch/work/999777_$$
 
-# This is commented out as we dont have any input files. 
+# This is commented out as we don't have any input files. 
 # cp input.dat /scratch/work/999777_$$
 
 # If you have input files then you must change directory to where these working
@@ -55,8 +54,7 @@ cd /scratch/work/999777_$$
 ###############
 
 # Screen output from the primes program will go to the PBS job output file, 
-# e.g. run_job.sh.o685, and errors will go to the PBS error file e.g.
-# run_job.sh.e686
+# e.g. run_job.sh.o685, and errors will go to the PBS error file e.g. run_job.sh.e686
 
 $myjobdir/primes.py
 
@@ -70,5 +68,4 @@ mv /scratch/work/999777_$$/primes.txt $myjobdir
 # We don't want to have old directories hanging around so after copying your 
 # data back remove the directory. 
 rmdir /scratch/work/999777_$$
-
 
