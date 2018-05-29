@@ -1,2 +1,5 @@
-*.o
+
+cuda/*.o
+
+primes/primes.txt
 
