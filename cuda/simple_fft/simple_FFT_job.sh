@@ -11,9 +11,7 @@
 #PBS -m abe 
 #PBS -M Mike.Lake@uts.edu.au
 
-# This is required for a CUDA program.
-source $myjobdir/set_cuda_env.sh
-
 cd ${PBS_O_WORKDIR}
+source ../set_cuda_env.sh
 ./simple_FFT
 
