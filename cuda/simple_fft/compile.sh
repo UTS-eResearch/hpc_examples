@@ -5,7 +5,5 @@
 source ../set_cuda_env.sh
 
 make clean
-
-# Now make the application.
 make
 

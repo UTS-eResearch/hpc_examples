@@ -1,5 +1,6 @@
 ################################################################################
 #  Mike's findcudalib.mk is used to find the locations for CUDA libraries. 
+#  It's sources from the Makefile.
 #  This is my modified one from the Nvidia supplied one 
 ################################################################################
 

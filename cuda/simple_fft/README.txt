@@ -1,27 +1,24 @@
 Mikes README for a Simple CUDA FFT
 ----------------------------------
 
-Example of using CUFFT. In this example, CUFFT is used to compute the
-1D-convolution of some signal with some filter by transforming both into
+Example of using CUDA to perform a FFT. In this example, CUFFT is used to compute 
+the 1D-convolution of some signal with some filter by transforming both into
 frequency domain, multiplying them together, and transforming the signal back
 to time domain.
 
 The files here came from: NVIDIA_CUDA-5.5_Samples/7_CUDALibraries/simpleCUFFT
 and were modified by Mike Lake.
 
-
 Compiling the Code
 ------------------
 
 $ ./compile.sh
-
 
 Running the Program
 -------------------
 
 Change back into the directory above and submit a PBS job as normal 
 i.e. run "qsub simpleCUFFT_job.sh"
-
 
 Details
 -------
@@ -42,7 +39,6 @@ First it creates the object file simpleCUFFT.o
 
 Then it links that with libs to create the executable. 
 /usr/local/cuda-5.5/bin/nvcc -ccbin g++ -m64 -o simpleCUFFT simpleCUFFT.o -lcufft
-
 
 Problems you may Encounter
 --------------------------
@@ -91,6 +87,5 @@ Solution:
   You are not on a GPU node. In the example above it showed the node as 
   'hpcnode1' and not 'hpcinode1', that little "i" means an Intel node and only 
   the Intel nodes have the GPUs installed. 
-
 
 

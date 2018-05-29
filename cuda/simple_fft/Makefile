@@ -43,8 +43,6 @@ ALL_LDFLAGS += $(EXTRA_NVCCLDFLAGS)
 ALL_LDFLAGS += $(addprefix -Xlinker ,$(EXTRA_LDFLAGS))
 
 # Common includes and paths for CUDA
-#INCLUDES  := -I../../common/inc
-#INCLUDES  := -I../common/inc 
 INCLUDES  := -I/usr/local/cuda/samples/common/inc
 LIBRARIES :=
 
@@ -60,17 +58,17 @@ LIBRARIES += -lcufft
 # Target rules
 all: build
 
-build: simpleCUFFT
+build: simple_FFT
 
-simpleCUFFT.o: simpleCUFFT.cu
+simple_FFT.o: simple_FFT.cu
 	$(NVCC) $(INCLUDES) $(ALL_CCFLAGS) $(GENCODE_FLAGS) -o $@ -c $<
 
-simpleCUFFT: simpleCUFFT.o
+simple_FFT: simple_FFT.o
 	$(NVCC) $(ALL_LDFLAGS) -o $@ $+ $(LIBRARIES)
 
 run: build
-	./simpleCUFFT
+	./simple_FFT
 
 clean:
-	rm -f simpleCUFFT.o simpleCUFFT
+	rm -f simple_FFT.o simple_FFT
 
