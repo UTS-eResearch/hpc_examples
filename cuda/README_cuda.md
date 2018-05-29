@@ -1,17 +1,3 @@
----
-type: Infrastructure
-
-traffic-light: green
-
-target-close-date: 
-
-actual-close-date: 
-
-affected-group: eResearch
-
-deliverables: 
-
----
 
 How to Compile and Run an FFT Example using CUDA Code on a GPU
 ==============================================================
@@ -36,7 +22,6 @@ that we do not have so have appended _UTS to the directory name.
 Hence, you will find the code in this directory under simpleCUFFT_UTS/
 
 Note: these examples can only be compiled on a GPU node.
-
 
 
 Description of Files and Directories 
