@@ -38,10 +38,9 @@
 # Screen output from the primes program will go to the PBS job output file, 
 # e.g. run_job.sh.o685, and errors will go to the PBS error file e.g. run_job.sh.e686
 
-# This is an example of setting a variable which specifies where your program or data is located.
-myjobdir=$HOME/jobs/primes
+# Change directory to where this script was submitted from. 
+cd ${PBS_O_WORKDIR}
 
-# Now change to this directory and run your program.
-cd $myjobdir
+# Now run your program.
 $myjobdir/primes.py
 
