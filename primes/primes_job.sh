@@ -3,11 +3,9 @@
 # Author: Mike Lake
 
 # Important: 
-# 1. In this example we have used a staff/student number of 999777
-#    You will need to change all instances of this to your own staff/student 
-#    number before you try and run this script. 
-# 2. You will also need to set myjobdir to where ever you have placed 
-#    this directory.
+# In this example we have used a staff/student number of 999777.
+# You will need to change all instances of this to your own 
+# staff/student number before you try and run this script. 
 #
 # Run this as qsub scriptname
 
@@ -36,12 +34,10 @@
 # If you have large input files or large output files then create a scratch
 # directory and copy your input files to there. 
 
-# Screen output from the primes program will go to the PBS job output file, 
-# e.g. run_job.sh.o685, and errors will go to the PBS error file e.g. run_job.sh.e686
-
-# Change directory to where this script was submitted from. 
+# The following assumes that the program primes.py is in the same directory 
+# as this script. We change directory to this directory.
 cd ${PBS_O_WORKDIR}
 
 # Now run your program.
-$myjobdir/primes.py
+./primes.py
 
