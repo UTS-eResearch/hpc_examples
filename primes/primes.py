@@ -1,4 +1,4 @@
-#! /usr/bin/env python
+#!/usr/bin/env python
 
 # Finds prime numbers.
 # Adapted from: http://www.hlevkin.com/Shell_progr/hellopython.htm
@@ -8,7 +8,8 @@
 
 import os
 
-start = 90000
+# A range of 100000 to 200000 will take about 30 seconds.
+start = 100000
 end   = 200000
 
 print 'Prime Number Finder'

@@ -20,6 +20,7 @@
 #PBS -l mem=5GB
 #PBS -l walltime=00:2:00 
 #PBS -q smallq
+#PBS -l host=ermdc14
 
 # Send email on abort, begin and end.
 #PBS -m abe 
@@ -30,6 +31,7 @@
 ###############################
 
 # This is where all your job files for this particular job are located. 
+# This is an example of setting a variable which specifies where your program or data is located.
 myjobdir=$HOME/jobs/primes
 
 ###################################
