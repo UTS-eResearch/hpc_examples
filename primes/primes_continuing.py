@@ -14,8 +14,8 @@
 import os, sys
 
 # Define a default start value and the number of subsequent integers to test for primeness. 
-start = 5
-end = 10000
+start = 100000
+end   = 200000
 
 ###########
 # Functions
@@ -70,7 +70,7 @@ def main():
     # Finding new primes starts here
     total_primes = 0
     for n in range(start, end):
-        print n, '\r', 
+        # print n, '\r', 
         for x in range(2, n):
             if n % x == 0:
                 # There is a factor so this n is not a prime.
