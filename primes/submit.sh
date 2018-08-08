@@ -21,12 +21,14 @@
 #PBS -l ncpus=1
 #PBS -l mem=5GB
 #PBS -l walltime=00:05:00 
+
 # There are several queues e.g. workq, smallq and others
 #PBS -q smallq
+
 # Send email on abort, begin and end. 
 # CHANGE 999777 to your staff or student number!
 #PBS -m abe 
-#PBS -M mike.lake@uts.edu.au
+#PBS -M 999777@uts.edu.au
 
 ###################################
 # Setup any input files for the run
@@ -39,7 +41,7 @@
 SCRATCH="/scratch/work/${USER}_${PBS_JOBID%.*}"
 mkdir ${SCRATCH}
 
-# Change to the working directory where qsub was started from.
+# Change to the PBS working directory where qsub was started from.
 # Copy your input files from there to scratch.
 cd ${PBS_O_WORKDIR}
 if [ -f primes.txt ]; then 
@@ -53,7 +55,7 @@ fi
 # Change to the scratch directory where you copied your 
 # input files to before you start. 
 cd ${SCRATCH}
-${PBS_O_WORKDIR}/primes_continuing.py
+${PBS_O_WORKDIR}/primes.py
 
 #####################################################
 # Copy results back to your own directory and cleanup
