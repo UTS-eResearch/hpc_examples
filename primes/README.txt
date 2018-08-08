@@ -15,8 +15,8 @@ Copy this entire directory to your own directory to test this out.
   $ cd
   $ mkdir jobs
   $ cd jobs
-  jobs/$ cp -r /shared/eresearch/primes .
-  primes/$ cd primes
+  jobs$ cp -r /shared/eresearch/primes .
+  jobs$ cd primes
 
 Usage: 
 
@@ -27,4 +27,5 @@ or
   $ qsub primes_job_advanced.sh 
 
 Mike Lake
-September 2017
+August 2018
+
