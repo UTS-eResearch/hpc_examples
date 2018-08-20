@@ -13,7 +13,7 @@
 
 import os, sys
 
-# Define a default start value and the number of subsequent integers to test for primeness. 
+# Define a default start integer and a larger end integer to test for primeness. 
 start = 10000
 end   = 20000
 
