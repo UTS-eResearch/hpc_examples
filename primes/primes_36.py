@@ -18,8 +18,8 @@ import os, sys
 # Define a starting integer and a larger ending integer as a range, 
 # within which to test for prime numbers. A range of 100000 to 200000 
 # will take about 3 to 4 minutes. 
-start = 10000
-end   = 20000
+start = 100000
+end   = 200000
 
 ###########
 # Functions
@@ -27,7 +27,7 @@ end   = 20000
 
 def get_last_prime():
     ''' 
-    This will open the file "primes.txt" and try to convert the last 
+    This will open the file "primes.txt" and try to convert the last
     line to an integer. This should be the last prime that was found. 
     Return that prime. 
     '''
@@ -101,7 +101,7 @@ def main():
             fh.write('%s\n' % n)
     
     fh.close()
-    print ('Found %d primes.' % total_primes)
+    print ('Found %d primes during this run.' % total_primes)
 
 if __name__ == '__main__':
     main()

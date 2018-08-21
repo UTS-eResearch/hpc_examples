@@ -4,6 +4,8 @@
 # how to use the PBS job scheduler and how to write a program so that 
 # it can pick up where it left off in case the program is terminated.
 # 
+# This program requires Python version 2.6 or 2.7.
+# 
 # Adapted from: http://www.hlevkin.com/Shell_progr/hellopython.htm
 #
 # Input : None or a previous primes.txt file
@@ -13,9 +15,11 @@
 
 import os, sys
 
-# Define a default start value and the number of subsequent integers to test for primeness. 
-start = 10000
-end   = 20000
+# Define a starting integer and a larger ending integer as a range, 
+# within which to test for prime numbers. A range of 100000 to 200000 
+# will take about 3 to 4 minutes. 
+start = 100000
+end   = 200000
 
 ###########
 # Functions
@@ -23,8 +27,8 @@ end   = 20000
 
 def get_last_prime():
     ''' 
-    This function will open the file "primes.txt" and try to convert the 
-    last line to an integer. This should be the last prime that was found. 
+    This will open the file "primes.txt" and try to convert the last
+    line to an integer. This should be the last prime that was found. 
     Return that prime. 
     '''
     try:
@@ -41,45 +45,57 @@ def get_last_prime():
 
     return last_prime
 
+def is_prime(n):
+    '''
+    Tests a number 'n' to see if it's a prime.
+    Returns True if its a prime, False otherwise.
+    '''
+    primeness = False
+    for x in range(2, n):
+        if n % x == 0:
+            # There is a factor so this number is not a prime.
+            break
+    else:
+        # The loop completed without a break so there are
+        # no factors found so this number is a prime.
+        primeness = True
+
+    return primeness
+
 ##########################
 # Main program starts here
 ##########################
 
 def main():
 
-    global start
+    global start, end
+    print 'Prime Number Finder'
+    print 'Looking for prime numbers in the range %d to %d ...' % (start, end)
 
     # Check if an existing list of primes exists. 
     if os.path.exists('primes.txt'):
         # Add 1 to the last prime found and start looking again from there, 
         # appending to that existing file. 
         start = get_last_prime() + 1
-        file_write_mode = 'a'
+        new_file = False
+        print ('Found an existing file, starting from %d' % start)
     else:
         # Start looking for primes from scratch.
-        file_write_mode = 'w'
+        new_file = True
     
-    print 'Prime Number Finder'
-    print 'Looking for prime numbers in the range %d to %d ...' % (start, end)
+    if start >= end:
+        print 'Already finished.'
+        sys.exit(1)
    
-    # Open the output file, either as write or append mode, with no buffering. 
-    fh = open('primes.txt', file_write_mode, 0) 
-    if file_write_mode == 'w':
+    # Open the output file for appending.
+    fh = open('primes.txt', 'a+') 
+    if new_file: 
         fh.write('Prime numbers in the range %d--%d\n' % (start, end))
  
-    # Finding new primes starts here
+    # Finding new primes starts here.
     total_primes = 0
     for n in range(start, end):
-        # print n, '\r', 
-        for x in range(2, n):
-            if n % x == 0:
-                # There is a factor so this n is not a prime.
-                # print n, 'equals', x, '*', n/x
-                break
-        else:
-            # The loop fell through without finding a factor
-            # so this number is a prime.
-            # print n
+        if is_prime(n):
             total_primes += 1
             fh.write('%s\n' % n)
     
