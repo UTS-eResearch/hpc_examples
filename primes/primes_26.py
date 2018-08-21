@@ -68,7 +68,8 @@ def is_prime(n):
 
 def main():
 
-    global start, end
+    global start, end 
+
     print 'Prime Number Finder'
     print 'Looking for prime numbers in the range %d to %d ...' % (start, end)
 
