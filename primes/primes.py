@@ -70,16 +70,13 @@ def main():
     # Finding new primes starts here
     total_primes = 0
     for n in range(start, end):
-        # print n, '\r', 
         for x in range(2, n):
             if n % x == 0:
                 # There is a factor so this n is not a prime.
-                # print n, 'equals', x, '*', n/x
                 break
         else:
             # The loop fell through without finding a factor
             # so this number is a prime.
-            # print n
             total_primes += 1
             fh.write('%s\n' % n)
     
