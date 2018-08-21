@@ -1,4 +1,4 @@
-#! /usr/bin/env python
+#!/usr/bin/env python
 
 # This program finds prime numbers. It was written as an example for 
 # how to use the PBS job scheduler and how to write a program so that 
