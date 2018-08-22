@@ -4,8 +4,9 @@ README
 This directory contains a small python program to calculate prime numbers, 
 modified so that it demonstrates how to profile a python program. 
 
-  primes.py   - simple program to calculate primes 
-  show_pstats.py - program to show data from profile.dat
+  primes.py      - simple program to calculate primes 
+  profile.dat    - example data from running 'python -m cProfile -o profile.dat primes.py'
+  show_pstats.py - program to sort data from profile.dat
 
 Copy this entire directory to your own directory to test this out.
 
