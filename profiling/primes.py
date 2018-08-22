@@ -4,24 +4,22 @@
 # This is written as an example for how to use the Python Profiler 
 # which can show you how much time is spent in each part of your program.
 #
-# This program requires Python version 3.6 or later.
-# 
-# Input : None or a previous primes.txt file
+# Input : None 
 # Output: primes.txt
 #
 # Author: Mike Lake
 
-# Profile with: pycallgraph graphviz -- ./primes.py
+# For how to profile this program read the README.txt file. 
 from pycallgraph import PyCallGraph
 from pycallgraph.output import GraphvizOutput
+# To use the pycallgraph module invoke it like this:  
 # with PyCallGraph(output=GraphvizOutput()):
 #     do code
 
 import os, sys, time
 
 # Define a starting integer and a larger ending integer as a range, 
-# within which to test for prime numbers. A range of 100000 to 200000 
-# will take about 3 to 4 minutes. 
+# within which to test for prime numbers. 
 start = 10000
 end   = 20000
 
@@ -73,6 +71,10 @@ def main():
     # Finding primes starts here.
     start_time = time.time()
     total_primes = 0
+
+    # To use PyCallGraph uncomment the PyCallGraph line and 
+    # INDENT the for loop so its under the with PyCallGraph() loop.
+    # with PyCallGraph(output=GraphvizOutput()):
     for n in range(start, end):
         if is_prime(n):
             total_primes += 1
@@ -84,6 +86,5 @@ def main():
     print ('Found %d primes during this run.' % total_primes)
 
 if __name__ == '__main__':
-    #with PyCallGraph(output=GraphvizOutput()):
     main()
 
