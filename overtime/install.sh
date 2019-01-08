@@ -1,6 +1,6 @@
 #!/bin/bash
 
-dest='/shared/eresearch/pbs_job_examples/checkpoint/'
+dest='/shared/eresearch/pbs_job_examples/overtime/'
 mkdir -p $dest
 
 # Update the date to todays date.
