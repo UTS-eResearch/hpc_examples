@@ -5,10 +5,6 @@
 #
 # Author: Mike Lake
 
-##################
-# Set PBS Commands 
-#################
-
 #PBS -N test
 #PBS -l ncpus=1
 #PBS -l mem=5GB
