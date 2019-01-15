@@ -1,7 +1,9 @@
 #!/bin/bash
 
+# This is the original example Mike Lake found at: 
+# https://github.com/rohgarg/dmtcp-job-scripts
+
 # Standard PBS options and env. vars
-# From: https://github.com/rohgarg/dmtcp-job-scripts
 
 #PBS -q QUEUE_NAME
 #PBS -l ncpus=2
