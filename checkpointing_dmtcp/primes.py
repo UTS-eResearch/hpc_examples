@@ -1,12 +1,11 @@
 #!/usr/bin/env python
 
-# This program finds prime numbers. It was written as an example for 
-# how to use the PBS job scheduler and how to write a program so that 
-# it can pick up where it left off in case the program is terminated.
+# This program finds prime numbers. This version was written as an example 
+# for how to use the PBS job scheduler and how to use checkpointing. 
 # 
 # This program requires Python version 3.6 or later.
 # 
-# Input : None or a previous primes.txt file
+# Input : None 
 # Output: primes.txt
 #
 # Author: Mike Lake
@@ -20,10 +19,7 @@ from datetime import datetime
 start = 100000
 end   = 200000
 
-###########
-# Functions
-###########
-
+# Define a function to test for primeness.
 def is_prime(n):
     '''
     Tests a number 'n' to see if it's a prime.
@@ -41,10 +37,7 @@ def is_prime(n):
 
     return primeness
 
-##########################
 # Main program starts here
-##########################
-
 def main():
 
     global start, end
@@ -52,17 +45,16 @@ def main():
     print ('Prime Number Finder')
     print ('Looking for prime numbers in the range %d to %d ...' % (start, end))
 
-    # Open the output file for writing.
+    # Open the output file for writing. Note we use 0 to supress file buffering.
     fh = open('primes.txt', 'w', 0) 
     fh.write('Prime numbers in the range %d--%d\n' % (start, end))
  
     # Finding new primes starts here.
     total_primes = 0
     for n in range(start, end):
-        #print (n)
-        #time.sleep(1)
         if is_prime(n):
             total_primes += 1
+            # Write the prime and the time it was found.
             fh.write('%s   %s\n' % (n, datetime.now().strftime("%Y-%m-%d %H:%M")))
             fh.flush()
     
