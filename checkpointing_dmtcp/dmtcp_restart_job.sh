@@ -34,6 +34,15 @@ start_coordinator()
 #  Start DMTCP coordinator
 start_coordinator
 
+SCRATCH="/scratch/work/${USER}_108870"
+mkdir ${SCRATCH}
+mv primes.txt ${SCRATCH}
+
 # Restart the program from its checkpoint images
-$DMTCP/dmtcp_restart $DMTCP_CHECKPOINT_DIR/ckpt_*.dmtcp
+dmtcp_restart $DMTCP_CHECKPOINT_DIR/ckpt_*.dmtcp
+
+mv ${SCRATCH}/primes.txt ${PBS_O_WORKDIR}
+
+cd ${PBS_O_WORKDIR}
+rmdir ${SCRATCH}
 

@@ -12,6 +12,7 @@
 # Author: Mike Lake
 
 import os, time
+from datetime import datetime
 
 # Define a starting integer and a larger ending integer as a range, 
 # within which to test for prime numbers. A range of 100000 to 200000 
@@ -62,7 +63,7 @@ def main():
         #time.sleep(1)
         if is_prime(n):
             total_primes += 1
-            fh.write('%s\n' % n)
+            fh.write('%s   %s\n' % (n, datetime.now().strftime("%Y-%m-%d %H:%M")))
             fh.flush()
     
     fh.close()
