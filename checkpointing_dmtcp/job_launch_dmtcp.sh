@@ -12,7 +12,7 @@
 export DMTCP_CHECKPOINT_DIR=$PBS_O_WORKDIR
 export DMTCP_TMPDIR=$PBS_O_WORKDIR
 export DMTCP_CHECKPOINT_INTERVAL=30
-export DMTCP_GZIP=0  # NO GZIP compression
+export DMTCP_GZIP=0  # No GZIP compression
 export LD_LIBRARY_PATH=/usr/lib64/dmtcp:$LD_LIBRARY_PATH
 
 # Function to start the DMTCP coordinator

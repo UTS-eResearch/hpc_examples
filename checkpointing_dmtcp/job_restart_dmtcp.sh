@@ -11,10 +11,8 @@
 export DMTCP_CHECKPOINT_DIR=$PBS_O_WORKDIR
 export DMTCP_TMPDIR=$PBS_O_WORKDIR
 export DMTCP_CHECKPOINT_INTERVAL=30
-export DMTCP_GZIP=0 # NO GZIP
+export DMTCP_GZIP=0 # No GZIP compression
 export LD_LIBRARY_PATH=/usr/lib64/dmtcp:$LD_LIBRARY_PATH
-
-cd $PBS_O_WORKDIR
 
 # Function to start DMTCP coordinator
 start_coordinator()
@@ -30,7 +28,10 @@ SCRATCH="/scratch/work/${USER}_108870"
 mkdir ${SCRATCH}
 mv primes.txt ${SCRATCH}
 
-# Restart the program from its checkpoint images
+# Restart the program from its checkpoint images. 
+# Note we stay in the directory where the checkpoint images are, 
+# not the scratch directory.
+cd $PBS_O_WORKDIR
 dmtcp_restart $DMTCP_CHECKPOINT_DIR/ckpt_*.dmtcp
 
 # Move your data back to the submission directory.
