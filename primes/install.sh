@@ -16,7 +16,7 @@ dest='/shared/eresearch/pbs_job_examples/primes/'
 # Copy the remaining files.
 cp README.txt $dest 
 cp clean.sh $dest
-cp submit.sh $dest
+cp submit_simple.sh $dest
 cp primes.py $dest
 
 #grep 'Mike.Lake@uts.edu.au' $pbs_script
