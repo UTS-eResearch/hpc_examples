@@ -1,6 +1,8 @@
 #!/bin/bash
 
 # Example of the simplest qsub submission script for the primes program.
+# Please read submit_advanced.sh which is more typical of what your 
+# submission script should be like.
 #
 # Important: 
 #   In this example we have used a staff/student number of 999777.
@@ -29,8 +31,8 @@
 #PBS -M 999777@uts.edu.au
 
 # In this example there are no input files. 
-# You just run the python program and your 
-# output file will be in this directory.
+# You just change directory to where your program is and run it. 
+# Your output file will be in that directory.
 
 cd ${PBS_O_WORKDIR}
 ./primes.py

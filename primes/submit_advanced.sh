@@ -1,6 +1,7 @@
 #!/bin/bash
 
-# Example qsub submission script for the primes program.
+# Example of a typical qsub submission script for the primes program.
+# This uses the /scratch directory which is probably what you should be using.
 #
 # Important: 
 #   In this example we have used a staff/student number of 999777.
@@ -22,7 +23,8 @@
 #PBS -l mem=5GB
 #PBS -l walltime=00:05:00 
 
-# There are several queues e.g. workq, smallq and others
+# There are several queues e.g. workq, smallq and others. 
+# If you don't specify a queue your job will be routed to an appropriate queue.  
 #PBS -q smallq
 
 # Send email on abort, begin and end. 
@@ -38,11 +40,22 @@
 # "/scratch/work/" directory and copy your input files to there. 
 # Note: This scratch directory will be on the node that the job has 
 # been submitted to by PBS. 
+
+# The shell parameters which are useful are:
+#   USER which is the name of the logged in user (e.g. 999777), 
+#   PBS_JOBID which is the job ID of this PBS job (e.g. 184327.hpcnode0) and 
+#   PBS_JOBID%.* is a bash parameter expansion. See "Parameter Expansion" in "man bash".
+# 
+# For instance if PBS_JOBID is 184327.hpcnode0 then PBS_JOBID%.* will be just 184327.
+# Hence the scratch directory created will be /scratch/work/999777_184327
+# This will be unique for every PBS job you submit.
+
 SCRATCH="/scratch/work/${USER}_${PBS_JOBID%.*}"
 mkdir ${SCRATCH}
 
 # Change to the PBS working directory where qsub was started from.
-# Copy your input files from there to scratch.
+# Copy your input files from there to the scratch directory you just created.
+# The shell parameter PBS_O_WORKDIR is the working directory where this job was started from.
 cd ${PBS_O_WORKDIR}
 if [ -f primes.txt ]; then 
     cp primes.txt ${SCRATCH}
@@ -52,8 +65,8 @@ fi
 # Start the Job
 ###############
 
-# Change to the scratch directory where you copied your 
-# input files to before you start. 
+# Change to the scratch directory where you copied your input 
+# files to before you start. Then run the primes program.
 cd ${SCRATCH}
 ${PBS_O_WORKDIR}/primes.py
 
@@ -61,11 +74,11 @@ ${PBS_O_WORKDIR}/primes.py
 # Copy results back to your own directory and cleanup
 #####################################################
 
-# Move your data back to your own directory.
+# Move your data back to your working directory.
 mv ${SCRATCH}/primes.txt ${PBS_O_WORKDIR}
 
-# We don't want to have old directories hanging around
-# so after copying your data back remove the directory. 
+# We don't want to have old scratch directories hanging around
+# so after copying your data back, remove the scratch directory. 
 cd ${PBS_O_WORKDIR}
 rmdir ${SCRATCH}
 
