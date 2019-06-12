@@ -32,5 +32,6 @@
 # You just run the python program and your 
 # output file will be in this directory.
 
+cd ${PBS_O_WORKDIR}
 ./primes.py
 
