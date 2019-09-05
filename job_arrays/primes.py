@@ -3,8 +3,6 @@
 # This program finds prime numbers. It was written as an example for 
 # how to use the PBS job scheduler and PBS array jobs. 
 # 
-# This program requires Python version 3.6 or later.
-# 
 # Adapted from: http://www.hlevkin.com/Shell_progr/hellopython.htm
 #
 # Input : Two integer args; starting and ending values.
@@ -43,27 +41,27 @@ def main():
 
     # Get the starting integer and the ending integer.
     if len(sys.argv) != 3:
-        print ("Usage:", sys.argv[0], "start end")
-        print ("Where start is an integer to start searching from")
-        print ("and end is an integer to end searching at.")
+        print "Usage: %s start end" % sys.argv[0]
+        print "Where start is an integer to start searching from"
+        print "and end is an integer to end searching at."
         sys.exit()
         
     try:
         start = int(sys.argv[1])
         end = int(sys.argv[2])
     except:
-        print ("One of your arguments was not an integer")
+        print "One of your arguments was not an integer."
         sys.exit()
 
-    print ("Prime Number Finder")
-    print ("Looking for prime numbers in the range %d to %d ..." % (start, end))
+    print "Prime Number Finder"
+    print "Looking for prime numbers in the range %d to %d ..." % (start, end)
 
     # Finding primes starts here.
     total_primes = 0
     for n in range(start, end):
         if is_prime(n):
             total_primes += 1
-            print ("%s" % n)
+            print "%d" % n
     
 if __name__ == "__main__":
     main()

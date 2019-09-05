@@ -18,7 +18,7 @@
 # are for EACH individual array job, not all the jobs together.
 #PBS -l ncpus=1
 #PBS -l mem=5GB
-#PBS -l walltime=00:05:00 
+#PBS -l walltime=00:15:00 
 #PBS -N test
 
 # Here we define the number of integers to check 
