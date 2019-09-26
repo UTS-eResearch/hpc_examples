@@ -7,7 +7,9 @@ mkdir -p $dest
 
 cp README.txt $dest
 cp *.m $dest
-cp *.sh $dest
+cp clean.sh $dest
+cp test_single_job.sh $dest
+cp test_parallel_job.sh $dest
 
 # Modify and copy the submission scripts.
 #pbs_scripts=' test_single_job.sh test_parallel_job.sh girkos_job.sh'
