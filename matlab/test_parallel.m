@@ -7,9 +7,9 @@ fprintf('Number of cores available from PBS is: %d \n', nCores);
 % Start parpool
 p = parpool (4);
 
-A = zeros(1,100);
-parfor i = 1:100
-    A(i) = sin(2*pi*i/100);
+A = zeros(1,1024);
+parfor i = 1:1024
+    A(i) = sin(2*pi*i/1024);
 end
 
 delete(p);
