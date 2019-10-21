@@ -33,6 +33,7 @@
 # In this example there are no input files. 
 # You just change directory to where your program is and run it. 
 # Your output file will be in that directory.
+# The shell parameter PBS_O_WORKDIR is the working directory where this job was started from.
 
 cd ${PBS_O_WORKDIR}
 ./primes.py
