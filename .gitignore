@@ -3,4 +3,5 @@ cuda/*.o
 cuda/[0-9]_*
 
 primes/primes.txt
+matlab/archived
 
