@@ -25,7 +25,7 @@ start_coordinator()
     export DMTCP_COORD_PORT=7779     # default is 7779
 }
 
-SCRATCH="/scratch/work/${USER}_${PBS_JOBID%.*}"
+SCRATCH="/scratch/${USER}_${PBS_JOBID%.*}"
 mkdir ${SCRATCH}
 
 #  Start DMTCP coordinator

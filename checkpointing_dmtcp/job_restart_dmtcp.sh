@@ -24,7 +24,7 @@ start_coordinator()
 #  Start DMTCP coordinator
 start_coordinator
 
-SCRATCH="/scratch/work/${USER}_108870"
+SCRATCH="/scratch/${USER}_108870"
 mkdir ${SCRATCH}
 mv primes.txt ${SCRATCH}
 

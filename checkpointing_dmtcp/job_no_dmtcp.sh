@@ -11,7 +11,7 @@
 #PBS -l walltime=00:05:00 
 
 # Create a scratch directory for the output.
-SCRATCH="/scratch/work/${USER}_${PBS_JOBID%.*}"
+SCRATCH="/scratch/${USER}_${PBS_JOBID%.*}"
 mkdir ${SCRATCH}
 
 # Change to the scratch directory and start the job.
