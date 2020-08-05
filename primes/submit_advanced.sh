@@ -37,7 +37,7 @@
 ###################################
   
 # If you have any input files then create your own directory under the 
-# "/scratch/work/" directory and copy your input files to there. 
+# "/scratch/" directory and copy your input files to there. 
 # Note: This scratch directory will be on the node that the job has 
 # been submitted to by PBS. 
 
@@ -47,10 +47,10 @@
 #   PBS_JOBID%.* is a bash parameter expansion. See "Parameter Expansion" in "man bash".
 # 
 # For instance if PBS_JOBID is 184327.hpcnode0 then PBS_JOBID%.* will be just 184327.
-# Hence the scratch directory created will be /scratch/work/999777_184327
+# Hence the scratch directory created will be /scratch/999777_184327
 # This will be unique for every PBS job you submit.
 
-SCRATCH="/scratch/work/${USER}_${PBS_JOBID%.*}"
+SCRATCH="/scratch/${USER}_${PBS_JOBID%.*}"
 mkdir ${SCRATCH}
 
 # Change to the PBS working directory where qsub was started from.
