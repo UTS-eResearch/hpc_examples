@@ -5,12 +5,12 @@
 # Submit this script like these examples:
 #
 #   Submit with indices 1,2,3,4,5
-#   qsub submit.sh -J 1-5
+#   qsub -J 1-5 submit.sh
 #
 # or 
 #
 #   Submit with indices 1,3,5,7,9
-#   qsub submit.sh -J 1-10:2
+#   qsub -J 1-10:2 submit.sh
 #
 # Author: Mike Lake
 
