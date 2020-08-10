@@ -14,7 +14,6 @@
 
 ##################
 # Set PBS Commands 
-# PBS commands must come at the top of this script, before any other commands.
 #################
 
 # Set the resource requirements; 1 CPU, 5 GB memory and 5 minutes wall time.
