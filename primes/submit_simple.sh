@@ -28,8 +28,7 @@
 # Send email on abort, begin and end. 
 # CHANGE 999777 to your staff or student number!
 #PBS -m abe 
-##PBS -M 999777@uts.edu.au
-#PBS -M mike.lake@uts.edu.au
+#PBS -M 999777@uts.edu.au
 
 # In this example there are no input files. 
 # You just change directory to where your program is and run it. 
