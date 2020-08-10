@@ -13,7 +13,7 @@
 # but for interactive use we use the minimums.
 #PBS -l ncpus=1
 #PBS -l mem=5GB
-#PBS -q smallq
+#PBS -q gpuq
 
 # Set your interactive wall time limit.
 #PBS -l walltime=00:01:00
@@ -23,7 +23,7 @@
 #PBS -M Mike.Lake@uts.edu.au
 
 # Set the node to start an interactive session on.
-#PBS -l host=ermdc21
+#PBS -l host=hpccnode10
 
 # Note: all other commands won't work.
 
