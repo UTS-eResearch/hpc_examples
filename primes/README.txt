@@ -2,17 +2,17 @@ README
 ------
 
 This directory contains a small python program to calculate prime numbers 
-within a specified range. There is also a PBS job submission script to 
+within a specified range. There are also two PBS job submission scripts to 
 submit this primes program to the PBS scheduling system.
 
   clean.sh   - A simple example shell script to remove old files.
-  primes.py  - A simple program to calculate primes. 
+  primes.py  - A simple python 3 program to calculate primes. 
   primes.txt - Typical output from above program.
 
-  submit_simple.sh   - A very simple example PBS submission script 
-                       which does not use a "scratch" directory.
-  submit_advanced.sh - A more typical example PBS submission script 
-                       which uses a local "scratch" directory.
+  submit_simple.sh  - A very simple example PBS submission script 
+                      which does not use a "scratch" directory.
+  submit_typical.sh - A more typical example PBS submission script 
+                      which uses a local "scratch" directory.
 
 Copy this entire directory to your own directory to test this out.
 
@@ -32,11 +32,11 @@ Now you can submit a PBS job to run your python script and find primes.
 
 or 
 
-  $ qsub submit_advanced.sh
+  $ qsub submit_typical.sh
 
 Once you understand what the submission scripts do you can write your 
 own submission scripts based on these.
 
 Mike Lake
-June 2019
+August 2020
 
