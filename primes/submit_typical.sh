@@ -4,11 +4,10 @@
 # This uses the /scratch directory which is probably what you should be using.
 #
 # Important: 
-#   In this example we have used a staff/student number of 999777.
-#   You will need to change all instances of this to your own 
-#   staff/student number before you try and run this script. 
-#   See the "PBS -M" below.
-#
+#   If you wish this script to email you when the job has started and ended 
+#   then you will need to remove the extra # from the start of the two lines 
+#   ##PBS -m and ##PBS -M and edit the latter to your own email.
+#    
 # Run this as qsub scriptname
 #
 # Author: Mike Lake
@@ -28,9 +27,9 @@
 #PBS -q smallq
 
 # Send email on abort, begin and end. 
-# CHANGE 999777 to your staff or student number!
-#PBS -m abe 
-#PBS -M 999777@uts.edu.au
+# CHANGE my.name to your email and remove the extra # from the start of the next two lines.
+##PBS -m abe 
+##PBS -M my.name@uts.edu.au
 
 ###################################
 # Setup any input files for the run
@@ -46,7 +45,7 @@
 
 # There are some shell parameters which are useful for creating a unique 
 # scratch directory. These are:
-#   USER which is the name of the logged in user (e.g. 999777), 
+#   USER which is the name of the logged in user (e.g. u999777), 
 #   PBS_JOBID which is the job ID of this PBS job (e.g. 184327.hpcnode0) and 
 #   PBS_JOBID%.* is a bash parameter expansion. See "Parameter Expansion" 
 #     and "Remove matching suffix pattern" in "man bash".
@@ -54,7 +53,7 @@
 # The PBS_JOBID%.* parameter expansion: 
 # This removes the matching suffix pattern, in this case .* i.e. everyting after the PBS_JOBID.
 # For instance if PBS_JOBID is 184327.hpcnode0 then PBS_JOBID%.* will be just 184327.
-# Hence the scratch directory created will be /scratch/999777_184327
+# Hence the scratch directory created will be /scratch/u999777_184327
 # This will be unique for every PBS job you submit.
 
 # Create your /scratch directory:
