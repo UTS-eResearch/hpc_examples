@@ -12,6 +12,7 @@
 # Output: primes.txt
 #
 # Author: Mike Lake
+# Date:   2020.08.01
 
 import os, sys
 
@@ -19,7 +20,7 @@ import os, sys
 # within which to test for prime numbers. A range of 100000 to 200000 
 # will take about 3 to 4 minutes. 
 start = 100000
-end   = 200000
+end   = 300000
 
 ###########
 # Functions

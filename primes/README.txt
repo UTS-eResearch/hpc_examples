@@ -14,15 +14,19 @@ submit this primes program to the PBS scheduling system.
   submit_typical.sh - A more typical example PBS submission script 
                       which uses a local "scratch" directory.
 
+Your programs should always use the /scratch directory for reading and 
+writing large data files.
+
 Copy this entire directory to your own directory to test this out.
 
   $ cd
   $ mkdir jobs
-  $ cd jobs
-  jobs$ cp -r /shared/eresearch/pbs_job_examples/primes .
-  jobs$ cd primes
+  $ cp -r /shared/eresearch/pbs_job_examples/primes jobs/
+  $ cd jobs/primes
 
 Read what primes.py does. It's designed to pick up where it left off.
+All of your programs should be able to do this. It's called checkpointing.
+Finding primes from 100,000 to 300,000 should take about 3 minutes.
 
 Edit the submission scripts to include your own email in the script.
 
@@ -34,8 +38,23 @@ or
 
   $ qsub submit_typical.sh
 
+You can follow the progress of your running job with qstat.
+
+  $ qstat 
+
+or 
+
+  $ qstat -f job_id
+
+Once the job has finished you can get full information, as in the qstat command above, 
+by using -x for "expired" jobs.
+  
+  $ qstat -fx job_id
+
 Once you understand what the submission scripts do you can write your 
 own submission scripts based on these.
+
+Remember: You should be using the /scratch directory for all large file reading and writing.
 
 Mike Lake
 August 2020
