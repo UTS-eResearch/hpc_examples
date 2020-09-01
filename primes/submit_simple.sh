@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Example of the simplest qsub submission script for the primes program.
-# Please read submit_advanced.sh which is more typical of what your 
+# Please read submit_typical.sh which is more typical of what your 
 # submission script should be like.
 #
 # Important: 
@@ -19,7 +19,7 @@
 #################
 
 # Set the resource requirements; 1 CPU, 5 GB memory and 5 minutes wall time.
-#PBS -N test
+#PBS -N primes
 #PBS -l ncpus=1
 #PBS -l mem=5GB
 #PBS -l walltime=00:05:00 

@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Example of a typical qsub submission script for the primes program.
-# This uses the /scratch directory which is probably what you should be using.
+# This uses the /scratch directory which is what you should be using.
 #
 # Important: 
 #   If you wish this script to email you when the job has started and ended 
@@ -17,7 +17,7 @@
 ##################
 
 # Set the resource requirements; 1 CPU, 5 GB memory and 5 minutes wall time.
-#PBS -N test
+#PBS -N primes
 #PBS -l ncpus=1
 #PBS -l mem=5GB
 #PBS -l walltime=00:05:00 
@@ -28,6 +28,7 @@
 
 # Send email on abort, begin and end. 
 # CHANGE my.name to your email and remove the extra # from the start of the next two lines.
+# Two or more # characters before a PBS line acts to comment out that line.
 ##PBS -m abe 
 ##PBS -M my.name@uts.edu.au
 
