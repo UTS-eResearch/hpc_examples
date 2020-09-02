@@ -9,11 +9,11 @@ The MPI examples here are my own versions of various programs.
     f_primes_serial.f90       FORTRAN program to calculate prime numbers, not using MPI.
     f_primes_serial_job.sh    PBS submission script.
 
-    f_primes_with_mpi.f90     FORTRAN program to calculate prime numbers using MPI.
-    f_primes_with_mpi_job.sh  PBS submission script.
+    f_primes_mpi.f90     FORTRAN program to calculate prime numbers using MPI.
+    f_primes_mpi_job.sh  PBS submission script.
 
-    r_primes_with_mpi.r       R program to calculate prime numbers using MPI.
-    r_primes_with_mpi_job.sh  PBS submission script.
+    r_primes_mpi.r       R program to calculate prime numbers using MPI.
+    r_primes_mpi_job.sh  PBS submission script.
     
     hello_mpi.c
     hello_mpi.sh
@@ -40,11 +40,11 @@ We need to load the MPI module before we compile:
 
 Now we can compile using the MPI FORTRAN parallel compiler:
 
-    $ mpif90 f_primes_with_mpi.f90 -o f_primes_with_mpi -lmpi
+    $ mpif90 f_primes_mpi.f90 -o f_primes_mpi -lmpi
 
 to run an MPI program we need to use `mpiexec`.
 
-    $ mpiexec -np 4 ./f_primes_with_mpi
+    $ mpiexec -np 4 ./f_primes_mpi
 
 Submit as a PBS job:
 
