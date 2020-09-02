@@ -34,7 +34,6 @@ cat $PBS_NODEFILE
 # OPTION 2
 mpiexec -np 8 f_primes_with_mpi
 
-
 ## #source env.sh
 #PATH=/opt/pbs/bin:$PATH
 ## export OMP_NUM_THREADS=1

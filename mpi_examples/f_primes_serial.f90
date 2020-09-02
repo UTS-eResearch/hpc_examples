@@ -6,24 +6,24 @@
 !   size increases.  It should lend itself well to an embarassingly parallel
 !   solution since each prime can be computed independently of all other
 !   primes.
-! AUTHOR: Blaise Barney 11/25/95 - adapted from version contributed by 
+! AUTHOR: Blaise Barney 11/25/95 - adapted from version contributed by
 !   Richard Ng & Wong Sze Cheong during MHPCC Singapore Workshop (8/22/95).
 ! LAST REVISED: 04/02/05
 !
 ! Explanation of constants and variables
-!   LIMIT                  = Increase this to find more primes 
+!   LIMIT                  = Increase this to find more primes
 !   PRINT                  = Print a line after this many numbers
-!   rank                   = task identifier 
+!   rank                   = task identifier
 !   pc                     = prime counter
-!   foundone               = most recent prime found 
+!   foundone               = most recent prime found
 !
-! MRL Notes: original was parameter(LIMIT=1000000000)        
+! MRL Notes: original was parameter(LIMIT=1000000000)
 ! ************************************************************************
 
     program prime
 
     integer LIMIT, PRINT
-    parameter(LIMIT=10000000)        
+    parameter(LIMIT=50000000)
     parameter(PRINT=1000000)
 
     integer n, pc, foundone
@@ -39,7 +39,7 @@
           foundone = n
 !         ****** Optional: print each prime as it is found. ******
 !         print *, foundone
-!         ******          
+!         ******
        endif
        if (mod(n-1,PRINT).eq.0) then
           print *,'Numbers scanned =',n-1,' Primes found = ',pc
@@ -63,9 +63,9 @@
          endif
        enddo
        result = .true.
-       return 
+       return
 !   Assume first four primes are counted elsewhere. Forget everything else.
-    else 
+    else
       result = .false.
       return
     endif
