@@ -1,8 +1,6 @@
 #!/bin/bash
 
 #PBS -N primes
-#PBS -m abe
-#PBS -M Mike.Lake@uts.edu.au
 #PBS -l walltime=00:10:00
 
 ## OPTION 1: MPI on a single node.
