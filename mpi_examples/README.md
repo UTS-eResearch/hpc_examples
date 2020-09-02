@@ -42,7 +42,7 @@ Now we can compile using the MPI FORTRAN parallel compiler:
 
     $ mpif90 f_primes_mpi.f90 -o f_primes_mpi -lmpi
 
-to run an MPI program we need to use `mpiexec`.
+To run an MPI program we need to use `mpiexec`.
 
     $ mpiexec -np 4 ./f_primes_mpi
 
