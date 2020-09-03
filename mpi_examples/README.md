@@ -34,7 +34,9 @@ Submit as a PBS job:
 
 # Compiling & Running MPI Programs
 
-We need to load the MPI module before we compile:
+We need to load the MPI module before we compile or run an MPI program.
+Loading this module changes login environment so that commands like 
+mpif90 and mpiexec can be found.
 
     $ module load openmpi-4.0.4
 
