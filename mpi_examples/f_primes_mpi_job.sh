@@ -5,14 +5,14 @@
 
 ## OPTION 1: MPI on a single node.
 ##           set -np 4
-##PBS -l select=1:ncpus=4:mpiprocs=4:mem=5GB:centos6_node=no 
+##PBS -l select=1:ncpus=4:mpiprocs=4:mem=5GB
 ##PBS -l walltime=00:10:00
 
 # OPTION 2
 # set -np 8 
 # e.g. exec_host = hpccnode03/2*4+hpccnode03/3*4
 #      exec_vnode = (hpccnode03:ncpus=4:mem=5Gb)+(hpccnode03:ncpus=4:mem=5gb)
-#PBS -l select=2:ncpus=4:mpiprocs=4:mem=5GB:centos6_node=no
+#PBS -l select=2:ncpus=4:mpiprocs=4:mem=5GB
 #PBS -l walltime=00:10:00
 
 ###PBS -l select=2:ncpus=4:mpiprocs=128:mem=25GB
