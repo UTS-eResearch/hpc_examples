@@ -1,16 +1,21 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 
-# Program to display data from cProfile in different ways.
+# Program to display statistics from cProfile output in different ways.
 
-import pstats
-
-p = pstats.Stats('profile.dat')
+import sys, pstats
 
 def sort_by(*args):
     # This just prints a heading above the data set.
     print ('------------------------------------------------------')
     print ('Sorting by: ', ', '.join(args))
     print ('------------------------------------------------------')
+
+# Load the profile statistics file, else exit.
+try:
+    p = pstats.Stats('profile.dat')
+except IOError:
+    print("The file 'profile.dat' could not be loaded. Exiting.")
+    sys.exit()    
 
 # Strip leading path information from file names. This reduces the width of the output. 
 p.strip_dirs()

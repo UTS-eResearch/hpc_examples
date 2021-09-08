@@ -1,7 +1,7 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 
 # This program finds prime numbers. 
-# This is written as an example for how to use the Python Profiler 
+# This is written as an example for how to use the Python Profiler,
 # which can show you how much time is spent in each part of your program.
 #
 # Input : None 
@@ -10,8 +10,8 @@
 # Author: Mike Lake
 
 # For how to profile this program read the README.txt file. 
-from pycallgraph import PyCallGraph
-from pycallgraph.output import GraphvizOutput
+from pycallgraph2 import PyCallGraph
+from pycallgraph2.output import GraphvizOutput
 # To use the pycallgraph module invoke it like this:  
 # with PyCallGraph(output=GraphvizOutput()):
 #     do code
