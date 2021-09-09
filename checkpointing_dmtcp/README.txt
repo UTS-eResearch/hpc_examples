@@ -1,4 +1,5 @@
-# README
+README
+------
 
 This is the directory /shared/eresearch/pbs_job_examples/checkpointing_dmtcp
 In here are scripts to demonstrate how to use DMTCP: Distributed Multi Threaded Check Pointing.
