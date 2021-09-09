@@ -21,8 +21,7 @@ ${PBS_O_WORKDIR}/primes.py
 # Move your output data back to the submission directory.
 mv ${SCRATCH}/primes.txt ${PBS_O_WORKDIR}
 
-# We don't want to have old directories hanging around
-# so after copying your data back remove the directory. 
+# Remove the scratch directory.
 cd ${PBS_O_WORKDIR}
 rmdir ${SCRATCH}
 
