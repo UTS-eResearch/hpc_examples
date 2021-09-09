@@ -1,7 +1,7 @@
-# README
+# README Additional Information
 
-This contains some further information on files in here that users do not 
-need to know. README.txt is copied to /shared/eresearch/pbs_job_examples/
+This README contains some further information on files in here that users do
+not need to know. README.md is copied to /shared/eresearch/pbs_job_examples/
 but not this file.
 
 These example PBS scripts come from https://github.com/rohgarg/dmtcp-job-scripts

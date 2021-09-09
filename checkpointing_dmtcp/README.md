@@ -1,5 +1,4 @@
-README
-------
+# README
 
 This is the directory /shared/eresearch/pbs_job_examples/checkpointing_dmtcp
 In here are scripts to demonstrate how to use DMTCP: Distributed Multi Threaded Check Pointing.
@@ -23,5 +22,5 @@ test.o108869            PBS stdout file.
 
 ckpt_python_*.dmtcp         DMTCP created checkpoint image.
 dmtcp_restart_script_*.sh   DMTCP created script to restart using this image.
-dmtcp_restart_script.sh     DMTCP created symlink to the real restart script.
+dmtcp_restart_script.sh     DMTCP created symlink to the latest restart script.
 
