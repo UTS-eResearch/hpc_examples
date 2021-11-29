@@ -12,9 +12,6 @@ Copy this entire directory to your own directory to test these out.
   test_parallel_job.sh  Running in parallel on multiple cores.
   test_parallel.m       "
 
-  girkos_job.sh         Example to demonstrate Girko’s circular law.
-  girkos_law.m          "
-
   clean.sh              Remove all files from run in prep for another run.
 
 Usage: 
