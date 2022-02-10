@@ -35,4 +35,6 @@ fi
 cp primes/README.txt $dest/primes/
 cp primes/*.sh       $dest/primes/
 cp primes/*.py       $dest/primes/
- 
+
+cp README.yaml ${dest}/
+
