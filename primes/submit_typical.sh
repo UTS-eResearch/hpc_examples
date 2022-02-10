@@ -8,7 +8,7 @@
 #   then you will need to remove the extra # from the start of the two lines 
 #   ##PBS -m and ##PBS -M and edit the latter to your own email.
 #    
-# Run this as qsub scriptname
+# Run this as: qsub submit_typical.sh
 #
 # Author: Mike Lake
 
@@ -17,6 +17,7 @@
 ##################
 
 # Set the resource requirements; 1 CPU, 5 GB memory and 5 minutes wall time.
+# We also have named our job "primes". You will see this in the qstat job list.
 #PBS -N primes
 #PBS -l ncpus=1
 #PBS -l mem=5GB
@@ -27,10 +28,10 @@
 #PBS -q smallq
 
 # Send email on abort, begin and end. 
-# CHANGE my.name to your email and remove the extra # from the start of the next two lines.
-# Two or more # characters before a PBS line acts to comment out that line.
+# CHANGE your.email to your email and remove the extra # from the start of the next two lines.
+# More than one # characters before a PBS line acts to comment out that line.
 ##PBS -m abe 
-##PBS -M my.name@uts.edu.au
+##PBS -M your.email@uts.edu.au
 
 ###################################
 # Setup any input files for the run
@@ -57,7 +58,7 @@
 # Hence the scratch directory created will be /scratch/u999777_184327
 # This will be unique for every PBS job you submit.
 
-# Create your /scratch directory:
+# Create a /scratch directory with a unique name.
 SCRATCH="/scratch/${USER}_${PBS_JOBID%.*}"
 mkdir ${SCRATCH}
 

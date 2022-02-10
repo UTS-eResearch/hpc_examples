@@ -9,7 +9,7 @@
 #   then you will need to remove the extra # from the start of the two lines 
 #   ##PBS -m and ##PBS -M and edit the latter to your own email.
 #    
-# Run this as qsub scriptname
+# Run this as: qsub submit_simple.sh
 #
 # Author: Mike Lake
 
@@ -27,7 +27,7 @@
 # Send email on abort, begin and end. 
 # CHANGE my.name to your email and remove the extra # from the start of the next two lines.
 ##PBS -m abe 
-##PBS -M my.name@uts.edu.au
+##PBS -M your.email@uts.edu.au
 
 # In this example there are no input files. 
 # You just change directory to where your program is and run it. 
