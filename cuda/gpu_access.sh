@@ -9,9 +9,9 @@
 #   qsub -I gpu_access.sh
 #
 
-# maximums: ncps=48, walltime=200:00:00, mem=256GB/48cores
-# but for interactive use we use the minimums.
+# For interactive use we use the minimums rather than the default values for the queues.
 #PBS -l ncpus=1
+#PBS -l ngpus=1
 #PBS -l mem=5GB
 #PBS -q gpuq
 
@@ -23,7 +23,7 @@
 #PBS -M Mike.Lake@uts.edu.au
 
 # Set the node to start an interactive session on.
-#PBS -l host=hpccnode10
+#PBS -l host=hpcnode10
 
 # Note: all other commands won't work.
 
