@@ -8,7 +8,7 @@
 #PBS -N test
 #PBS -l ncpus=1
 #PBS -l mem=5GB
-#PBS -l walltime=00:05:00 
+#PBS -l walltime=00:05:00
 
 # Create a scratch directory for the output.
 SCRATCH="/scratch/${USER}_${PBS_JOBID%.*}"

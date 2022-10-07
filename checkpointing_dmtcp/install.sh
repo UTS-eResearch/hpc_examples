@@ -13,7 +13,7 @@ git st
 
 # Ask user what to do.
 echo
-echo 'Install these files?' 
+echo 'Install these files?'
 echo "Press (y/Y) to delete or press any other key to exit."
 read REPLY
 if [ -z $REPLY ]; then
@@ -32,11 +32,11 @@ if [ ! -d $dest ]; then
     exit 0
 fi
 
-# Install 
+# Install
 cp README.txt $dest
 cp primes.py  $dest
 cp clean.sh   $dest
 cp job_no_dmtcp.sh      $dest
 cp job_launch_dmtcp.sh  $dest
 cp job_restart_dmtcp.sh $dest
- 
+

@@ -1,11 +1,11 @@
 #!/usr/bin/env python3
 
-# This program finds prime numbers. This version was written as an example 
-# for how to use the PBS job scheduler and how to use checkpointing. 
-# 
+# This program finds prime numbers. This version was written as an example
+# for how to use the PBS job scheduler and how to use checkpointing.
+#
 # This program requires Python version 3.6 or later.
-# 
-# Input : None 
+#
+# Input : None
 # Output: primes.txt
 #
 # Author: Mike Lake
@@ -13,9 +13,9 @@
 import os, time
 from datetime import datetime
 
-# Define a starting integer and a larger ending integer as a range, 
-# within which to test for prime numbers. A range of 100000 to 200000 
-# will take about 3 to 4 minutes. 
+# Define a starting integer and a larger ending integer as a range,
+# within which to test for prime numbers. A range of 100000 to 200000
+# will take about 3 to 4 minutes.
 start = 100000
 end   = 200000
 
@@ -46,9 +46,9 @@ def main():
     print ('Looking for prime numbers in the range %d to %d ...' % (start, end))
 
     # Open the output file for writing.
-    fh = open('primes.txt', 'w') 
+    fh = open('primes.txt', 'w')
     fh.write('Prime numbers in the range %d--%d\n' % (start, end))
- 
+
     # Finding new primes starts here.
     total_primes = 0
     for n in range(start, end):
@@ -57,7 +57,7 @@ def main():
             # Write the prime and the time it was found.
             fh.write('%s   %s\n' % (n, datetime.now().strftime("%Y-%m-%d %H:%M:%S")))
             fh.flush()
-    
+
     fh.close()
     print ('Found %d primes during this run.' % total_primes)
 
