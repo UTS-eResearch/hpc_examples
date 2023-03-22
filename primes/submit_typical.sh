@@ -63,7 +63,9 @@ SCRATCH="/scratch/${USER}_${PBS_JOBID%.*}"
 mkdir ${SCRATCH}
 
 # Change to the PBS working directory where qsub was started from.
-# The shell parameter PBS_O_WORKDIR is the working directory where this job was started from.
+# The shell parameter PBS_O_WORKDIR is the working directory where this job 
+# was started from. We do this because this bash script has started a new
+# shell and so this point your working directory is your home directory.
 cd ${PBS_O_WORKDIR}
 
 # Copy your input files from there to the scratch directory you created above.
