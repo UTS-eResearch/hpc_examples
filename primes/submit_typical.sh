@@ -90,7 +90,8 @@ ${PBS_O_WORKDIR}/primes.py
 mv ${SCRATCH}/primes.txt ${PBS_O_WORKDIR}
 
 # We don't want to have old scratch directories hanging around
-# so after copying your data back, remove the scratch directory. 
+# so after copying your data back, remove the scratch directory.
+# Note we change out of the scratch directory before we try to remove it.
 cd ${PBS_O_WORKDIR}
 rmdir ${SCRATCH}
 
