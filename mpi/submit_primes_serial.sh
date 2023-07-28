@@ -9,5 +9,5 @@
 ##PBS -M Your.Email@uts.edu.au
 
 cd $PBS_O_WORKDIR
-./f_primes_serial
+./primes_serial
 

@@ -27,10 +27,10 @@ cd $PBS_O_WORKDIR
 cat $PBS_NODEFILE
 
 # OPTION 1
-#mpiexec -np 4 f_primes_mpi
+#mpiexec -np 4 primes_mpi
 
 # OPTION 2
-mpiexec -np 8 f_primes_mpi
+mpiexec -np 8 primes_mpi
 
 ## #source env.sh
 #PATH=/opt/pbs/bin:$PATH
