@@ -33,15 +33,9 @@ fi
 
 cp README.yaml ${dest}/
 
-# Install primes examples
-cp primes/README.txt $dest/primes/
-cp primes/*.sh       $dest/primes/
-cp primes/*.py       $dest/primes/
-
-# Install MPI examples
-cp mpi/README.md $dest/mpi/
-cp mpi/clean.sh $dest/mpi/
-cp mpi/compile_all.sh $dest/mpi/
-cp mpi/*.f90 $dest/mpi/
-cp mpi/submit_primes_* $dest/mpi/
+for d in mpi primes ; do
+    pushd mpi
+    ./install.sh
+    popd
+done
 
