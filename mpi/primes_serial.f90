@@ -1,5 +1,5 @@
 ! ************************************************************************
-! FILE: f_primes_serial.f90
+! FILE: primes_serial.f90
 ! DESCRIPTION:
 !   This program generates primes. The approach taken is a "brute force"
 !   method which requires increasingly greater amounts of cpu as the problem

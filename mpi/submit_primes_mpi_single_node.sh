@@ -13,5 +13,5 @@ cd $PBS_O_WORKDIR
 cat $PBS_NODEFILE
 
 module load openmpi-4.1.5
-mpiexec -np 8 f_primes_mpi
+mpiexec -np 8 primes_mpi
 
