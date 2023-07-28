@@ -34,7 +34,7 @@ fi
 cp README.yaml ${dest}/
 
 for d in mpi primes ; do
-    pushd mpi
+    pushd $d
     ./install.sh
     popd
 done
