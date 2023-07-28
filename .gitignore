@@ -5,6 +5,9 @@ cuda/[0-9]_*
 
 primes/primes.txt
 
+mpi/primes_serial
+mpi/primes_mpi
+
 matlab/archived
 
 #profiling/profile.dat
