@@ -1,11 +1,11 @@
 #!/bin/bash
 
-# Installs example files to the cluster.
+# Installs all example files to the cluster.
 
 dest="/shared/eresearch/pbs_job_examples"
 
 echo ''
-echo "=== Install Examples to Cluster ==="
+echo "=== Install All Examples to Cluster ==="
 echo ''
 
 echo '------ GIT Status ------'
