@@ -20,5 +20,6 @@ cp clean.sh $dest
 cp compile_all.sh $dest
 cp *.f90 $dest
 cp submit_primes_serial.sh $dest
-cp submit_primes_mpi.sh $dest
+cp submit_primes_mpi_many_nodes.sh $dest
+cp submit_primes_mpi_single_node.sh $dest
 

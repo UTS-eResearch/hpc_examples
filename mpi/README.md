@@ -4,13 +4,13 @@ The MPI examples here are my own versions of various programs.
 
     clean.sh                  Remove PBS .o and .e output files.
     compile_all.sh            Compile all the programs.
-    env.sh
 
-    f_primes_serial.f90       FORTRAN program to calculate prime numbers, not using MPI.
-    f_primes_serial_job.sh    PBS submission script.
+    primes_serial.f90         FORTRAN program to calculate prime numbers, not using MPI.
+    submit_primes_serial.sh   PBS submission script.
 
-    f_primes_mpi.f90     FORTRAN program to calculate prime numbers using MPI.
-    f_primes_mpi_job.sh  PBS submission script.
+    primes_mpi.f90                     FORTRAN program to calculate prime numbers using MPI.
+    submit_primes_mpi_many_nodes.sh    PBS submission script.
+    submit_primes_mpi_single_node.sh   PBS submission script.
 
     r_primes_mpi.r       R program to calculate prime numbers using MPI.
     r_primes_mpi_job.sh  PBS submission script.
@@ -22,15 +22,15 @@ The MPI examples here are my own versions of various programs.
 
 Compile serial FORTRAN programs with `gfortran`:
 
-    $ gfortran f_primes_serial.f90 -o f_primes_serial
+    $ gfortran primes_serial.f90 -o primes_serial
 
 Then just run it like so:
 
-    $ ./f_primes_serial
+    $ ./primes_serial
 
 Submit as a PBS job:
 
-    $ qsub f_primes_serial_job.sh
+    $ qsub submit_primes_serial.sh
 
 ## Compiling & Running MPI Programs
 
@@ -42,15 +42,24 @@ mpif90 and mpiexec can be found.
 
 Now we can compile using the MPI FORTRAN parallel compiler:
 
-    $ mpif90 f_primes_mpi.f90 -o f_primes_mpi -lmpi
+    $ mpif90 primes_mpi.f90 -o primes_mpi -lmpi
 
 To run an MPI program we need to use `mpiexec`.
 
-    $ mpiexec -np 4 ./f_primes_mpi
+    $ mpiexec -np 4 ./primes_mpi
 
-Submit as a PBS job:
+Submit as a PBS job. There are two job submission script examples.
 
-    $ qsub f_primes_mpi_job.sh
+    $ qsub submit_primes_mpi_single_node.sh
+
+and
+ 
+    $ qsub submit_primes_mpi_many_nodes.sh
+
+Read the section below and read the scripts to understand the difference between them.
+You can also submit both jobs and use `qstat -an1` to see the difference when running.
+
+    $ qstat -an1
 
 ## MPI Job Placement on Nodes
 
