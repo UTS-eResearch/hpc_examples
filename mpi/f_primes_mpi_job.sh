@@ -21,7 +21,7 @@
 ##PBS -l place=scatter:excl
 #PBS -l place=scatter
 
-module load openmpi-4.0.4
+module load openmpi-latest
 
 cd $PBS_O_WORKDIR
 cat $PBS_NODEFILE
@@ -36,5 +36,4 @@ mpiexec -np 8 f_primes_mpi
 #PATH=/opt/pbs/bin:$PATH
 ## export OMP_NUM_THREADS=1
 ## /usr/lib64/openmpi/bin/mpiexec --mca btl_base_warn_component_unused 0 --mca orte_base_help_aggregate 0 -np 4 mpi_prime
-
 
