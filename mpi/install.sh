@@ -1,5 +1,7 @@
 #!/bin/bash
 
+# This installs selected files from here to where users can read them.
+
 dest='/shared/eresearch/pbs_job_examples/mpi/'
 mkdir -p $dest
 
