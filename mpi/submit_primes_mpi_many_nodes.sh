@@ -12,6 +12,9 @@
 cd $PBS_O_WORKDIR
 cat $PBS_NODEFILE
 
-module load openmpi-4.1.5
+module load openmpi-latest
 mpiexec -np 8 primes_mpi
+
+#mpiexec -np `cat $PBS_NODEFILE | wc -l` /bin/hostname
+#mpiexec -np 4 --mca btl ^openib ./primes_mpi
 
