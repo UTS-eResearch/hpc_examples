@@ -1,10 +1,11 @@
 #!/bin/bash
 
-# This installs selected files from here to where users can read them.
+# Installs selected files from here to where users can read them.
 
 dest='/shared/eresearch/pbs_job_examples/mpi/'
 mkdir -p $dest
 
+# None of these scripts use email so its all commented out now.
 #pbs_script='primes_job.sh'
 # Modify and copy the submission script.
 #cat $pbs_script | sed 's/Mike.Lake@uts.edu.au/999777@uts.edu.au/' > temp
