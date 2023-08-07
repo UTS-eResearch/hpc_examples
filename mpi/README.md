@@ -5,18 +5,14 @@ The MPI examples here are my own versions of various programs.
     clean.sh                  Remove PBS .o and .e output files.
     compile_all.sh            Compile all the programs.
 
+    submit_python_version.sh  Just gets the Python version number using MPI.
+
     primes_serial.f90         FORTRAN program to calculate prime numbers, not using MPI.
     submit_primes_serial.sh   PBS submission script.
 
     primes_mpi.f90                     FORTRAN program to calculate prime numbers using MPI.
     submit_primes_mpi_many_nodes.sh    PBS submission script.
     submit_primes_mpi_single_node.sh   PBS submission script.
-
-    r_primes_mpi.r       R program to calculate prime numbers using MPI.
-    r_primes_mpi_job.sh  PBS submission script.
-    
-    hello_mpi.c
-    hello_mpi.sh
 
 ## Compiling & Running Serial Programs
 
