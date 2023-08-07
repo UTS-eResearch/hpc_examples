@@ -1,7 +1,13 @@
 #!/bin/bash
 
-module load openmpi-4.1.5
+# This script will compile and build two Fortran primes programs.
 
+# Load the latest OenMPI module.
+module load openmpi-latest
+
+# Compile using gfortran and output the executable primes_serial
 gfortran primes_serial.f90 -o primes_serial
-mpif90 primes_mpi.f90 -o primes_mpi -lmpi
+
+# Compile using gfortran but use the MPI wrapper output the executable primes_mpi
+mpifort primes_mpi.f90 -o primes_mpi -lmpi
 
