@@ -19,7 +19,7 @@ The MPI examples here are my own versions of various programs.
 
 ## Compiling & Running Serial Programs
 
-Compile serial FORTRAN programs with `gfortran`:
+Compile serial FORTRAN programs with gfortran:
 
     $ gfortran primes_serial.f90 -o primes_serial
 
@@ -39,7 +39,7 @@ Now we can compile using the MPI FORTRAN parallel compiler:
 
     $ mpif90 primes_mpi.f90 -o primes_mpi -lmpi
 
-To run an MPI program we then need to use `mpiexec` to run our program 
+To run an MPI program we then need to use "mpiexec" to run our program 
 in the PBS submission script. 
 
 Submit as a PBS job. There are two job submission script examples.
@@ -51,9 +51,23 @@ and
     $ qsub submit_primes_mpi_many_nodes.sh
 
 Read the section below and read the scripts to understand the difference between them.
-You can also submit both jobs and use `qstat -an1` to see the difference when running.
+You can also submit both jobs and use "qstat -an1" to see the difference when running.
 
     $ qstat -an1
+
+## Typical Results
+
+Find all primes up to 100,000,000
+
+Using primes_serial takes 1:07 minutes.
+
+Using primes_mpi with the following MPI processes takes:
+
+    PBS Select Statement  Time Taken
+    --------------------  ----------
+    ncpis=2:mpiprocs=2    34 seconds
+    ncpis=4:mpiprocs=4    23 seconds
+    ncpis=8:mpiprocs=8    14 seconds
 
 ## MPI Job Placement on Nodes
 
@@ -73,7 +87,7 @@ In this case you might have one chunk runnning on hpcnode03 and another
 chunk running on hpcnode04.
 
 You will notice in the submission scripts that I have incuded a line:
-`cat $PBS_NODEFILE`. This can be useful but its use is not covered here.
+"cat $PBS_NODEFILE". This can be useful but its use is not covered here.
 You can leave out this line if you wish.
 
 Reference: PBS Professional 2021.1 User's Guide, "4.7 Specifying Job Placement", 
