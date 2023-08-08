@@ -1,5 +1,8 @@
 # MPI Examples README
 
+MPI stands for "Message Passing Interface". MPI is used to send messages from
+one process on a computer to another.
+
 The MPI examples here are my own versions of various programs.
 
     clean.sh                  Remove PBS .o and .e output files.
@@ -20,11 +23,7 @@ Compile serial FORTRAN programs with `gfortran`:
 
     $ gfortran primes_serial.f90 -o primes_serial
 
-Then just run it like so:
-
-    $ ./primes_serial
-
-Submit as a PBS job:
+Then just submit it as a PBS job:
 
     $ qsub submit_primes_serial.sh
 
@@ -40,9 +39,8 @@ Now we can compile using the MPI FORTRAN parallel compiler:
 
     $ mpif90 primes_mpi.f90 -o primes_mpi -lmpi
 
-To run an MPI program we need to use `mpiexec`.
-
-    $ mpiexec -np 4 ./primes_mpi
+To run an MPI program we then need to use `mpiexec` to run our program 
+in the PBS submission script. 
 
 Submit as a PBS job. There are two job submission script examples.
 
@@ -64,14 +62,14 @@ You can choose to place each chunk on a different node,
 or your job can use chunks that are all on one node. 
 
 If you don't specify a placement then the default placement is "free" which
-will place a chunk of a job on any free node.
+will place a chunk of a job on any free node. This is what you should normally use.
 
 If you specify that the placement is to be "scatter" then only one chunk is
 taken from any host.
 
     #PBS -l place=scatter
 
-In this case you might have one chunk runnning on hpcnode03i and another 
+In this case you might have one chunk runnning on hpcnode03 and another 
 chunk running on hpcnode04.
 
 You will notice in the submission scripts that I have incuded a line:
