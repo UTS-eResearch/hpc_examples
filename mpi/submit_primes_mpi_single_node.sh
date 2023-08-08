@@ -1,7 +1,6 @@
 #!/bin/bash
 
 # This will run the primes finding program on one node using 8 cores.
-# 
 # Then we invoke mpiexec and specify -np 8
 
 #PBS -N primes
