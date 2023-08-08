@@ -23,7 +23,7 @@
     program prime
 
     integer LIMIT, PRINT
-    parameter(LIMIT=50000000)
+    parameter(LIMIT=100000000)
     parameter(PRINT=1000000)
 
     integer n, pc, foundone
