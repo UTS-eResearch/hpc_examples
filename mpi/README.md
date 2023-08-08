@@ -74,6 +74,10 @@ taken from any host.
 In this case you might have one chunk runnning on hpcnode03i and another 
 chunk running on hpcnode04.
 
+You will notice in the submission scripts that I have incuded a line:
+`cat $PBS_NODEFILE`. This can be useful but its use is not covered here.
+You can leave out this line if you wish.
+
 Reference: PBS Professional 2021.1 User's Guide, "4.7 Specifying Job Placement", 
 page UG-64.
 
