@@ -33,7 +33,7 @@ PROGRAM PRIME
     INCLUDE 'mpif.h'
  
     INTEGER LIMIT , FIRST
-    PARAMETER (LIMIT=100000000)
+    PARAMETER (LIMIT=400000000)
     PARAMETER (FIRST=0)
  
     INTEGER ntasks, rank, ierr, n, pc, pcsum, foundone, &
