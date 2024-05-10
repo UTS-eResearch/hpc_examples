@@ -55,6 +55,14 @@ You can also submit both jobs and use "qstat -an1" to see the difference when ru
 
     $ qstat -an1
 
+If you log into one of those nodes you will see:
+
+    hpcnode07 ~/$ ps -ax | grep primes
+    677068   Rl   0:50 primes_mpi
+    677069   Rl   0:50 primes_mpi
+    677070   Rl   0:50 primes_mpi
+    677071   Rl   0:50 primes_mpi
+
 ## Typical Results
 
 Find all primes up to 100,000,000
