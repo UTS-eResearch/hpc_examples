@@ -6,8 +6,6 @@
 # 
 # This program requires Python version 3.6 or later.
 # 
-# Adapted from: http://www.hlevkin.com/Shell_progr/hellopython.htm
-#
 # Input : None or a previous primes.txt file
 # Output: primes.txt
 #
