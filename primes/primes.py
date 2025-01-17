@@ -17,10 +17,12 @@
 import os, sys
 
 # Define a starting integer and a larger ending integer as a range, 
-# within which to test for prime numbers. A range of 100000 to 200000 
-# will take about 3 to 4 minutes. 
+# within which to test for prime numbers. 
+# A range of 100,000 to 200,000 will take about 1.5 minutes and finds  8392 primes.
+# A range of 100,000 to 300,000 will take about 4   minutes and finds 16405 primes.
+# A range of 100,000 to 500,000 will take about 10  minutes and finds 31946 primes.
 start = 100000
-end   = 300000
+end   = 200000
 
 ###########
 # Functions
