@@ -23,10 +23,6 @@
 #PBS -l mem=5GB
 #PBS -l walltime=00:05:00 
 
-# There are several queues e.g. workq, smallq and others. 
-# If you don't specify a queue your job will be routed to an appropriate queue.  
-#PBS -q smallq
-
 # Send email on abort, begin and end. 
 # CHANGE your.email to your email and remove the extra # from the start of the next two lines.
 # More than one # characters before a PBS line acts to comment out that line.
