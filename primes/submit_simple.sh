@@ -25,7 +25,7 @@
 #PBS -l walltime=00:05:00 
 
 # Send email on abort, begin and end. 
-# CHANGE my.name to your email and remove the extra # from the start of the next two lines.
+# CHANGE the below to your email and remove the extra # from the start of the next two lines.
 ##PBS -m abe 
 ##PBS -M your.email@uts.edu.au
 
