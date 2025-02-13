@@ -11,7 +11,6 @@
 cd $PBS_O_WORKDIR
 cat $PBS_NODEFILE
 
-export LD_LIBRARY_PATH=/opt/pbs/lib
 module load openmpi-latest
 mpiexec primes_mpi
 
