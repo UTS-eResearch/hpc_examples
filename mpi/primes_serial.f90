@@ -24,11 +24,12 @@
 
     integer LIMIT, PRINT
     parameter(LIMIT=100000000)
-    parameter(PRINT=1000000)
+    parameter(PRINT=10000000)
+    102 FORMAT(I9)
 
     integer n, pc, foundone
     logical result
-
+    open(1, file = 'primes.dat', status = 'replace')
     print *,'Starting. Numbers to be scanned =',LIMIT
 !   Assume first four primes are counted here.
     pc = 4
@@ -39,6 +40,7 @@
           foundone = n
 !         ****** Optional: print each prime as it is found. ******
 !         print *, foundone
+          write(1,102) foundone
 !         ******
        endif
        if (mod(n-1,PRINT).eq.0) then
@@ -46,6 +48,7 @@
        endif
     enddo
     print *,'Done. Largest prime is ',foundone,' Total primes ',pc
+    close(1)
     end
 
     subroutine isprime (n,result)

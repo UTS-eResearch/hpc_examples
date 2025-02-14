@@ -33,13 +33,15 @@ PROGRAM PRIME
     INCLUDE 'mpif.h'
  
     INTEGER LIMIT , FIRST
-    PARAMETER (LIMIT=400000000)
+    PARAMETER (LIMIT=100000000)
     PARAMETER (FIRST=0)
+    102 FORMAT(I9)
  
     INTEGER ntasks, rank, ierr, n, pc, pcsum, foundone, &
         maxprime, mystart, stride
     DOUBLE PRECISION start_time, end_time
     LOGICAL result
+    open(1, file = 'primes.dat', status = 'replace')
  
     CALL MPI_INIT(ierr)
     CALL MPI_COMM_RANK(mpi_comm_world, rank, ierr)
@@ -73,6 +75,7 @@ PROGRAM PRIME
                 foundone = n
                 ! Print each prime as it is found.
                 ! PRINT *, foundone
+                write(1,102) foundone
             ENDIF
          ENDDO
          CALL MPI_REDUCE(pc, pcsum, 1, mpi_integer, mpi_sum, FIRST, &
@@ -104,6 +107,7 @@ PROGRAM PRIME
     ENDIF
  
     CALL MPI_FINALIZE(ierr)
+    close(1)
     END
  
  
