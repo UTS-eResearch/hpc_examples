@@ -65,17 +65,22 @@ If you log into one of those nodes you will see:
 
 ## Typical Results
 
+The list of prime found will be in the file primes.dat
+
 Find all primes up to 100,000,000
 
-Using primes_serial takes 1:07 minutes.
+Using primes_serial takes about 1/2 a minute.
 
 Using primes_mpi with the following MPI processes takes:
 
-    PBS Select Statement  Time Taken
-    --------------------  ----------
-    ncpis=2:mpiprocs=2    34 seconds
-    ncpis=4:mpiprocs=4    23 seconds
-    ncpis=8:mpiprocs=8    14 seconds
+    PBS Select Statement   Time Taken
+    --------------------   ----------
+    ncpus=2:mpiprocs=2     26 seconds
+    ncpus=4:mpiprocs=4     18 seconds
+    ncpus=8:mpiprocs=8      9 seconds
+    ncpus=16:mpiprocs=16    2 seconds
+
+    select=2:ncpus=4:mpiprocs=4  9 seconds
 
 ## MPI Job Placement on Nodes
 
