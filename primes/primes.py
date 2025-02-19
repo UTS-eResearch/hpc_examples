@@ -30,7 +30,8 @@ def get_last_prime():
     ''' 
     This will open the file "primes.txt" and try to convert the last
     line to an integer. This should be the last prime that was found. 
-    Return that prime. 
+    Return that prime.
+    TODO if primes.txt is empty this will FAIL
     '''
     try:
         with open('primes.txt', 'r') as f:
@@ -93,6 +94,7 @@ def main():
     fh = open('primes.txt', 'a+') 
     if new_file: 
         fh.write('Prime numbers in the range %d--%d\n' % (start, end))
+        fh.flush()
  
     # Finding new primes starts here.
     total_primes = 0
@@ -100,6 +102,7 @@ def main():
         if is_prime(n):
             total_primes += 1
             fh.write('%s\n' % n)
+            fh.flush()
     
     fh.close()
     print('Found %d primes during this run.' % total_primes)
