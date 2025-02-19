@@ -40,9 +40,11 @@ def get_last_prime():
             last_prime = int(last_line)
     except IOError:
         print('Error: Could not open existing file.')
+        fh.flush()
         sys.exit(1)
     except ValueError:  
         print('Error: Last line could not be converted to an integer.') 
+        fh.flush()
         sys.exit(1)
 
     return last_prime
@@ -74,6 +76,7 @@ def main():
 
     print('Prime Number Finder')
     print('Looking for prime numbers in the range %d to %d ...' % (start, end))
+    fh.flush()
 
     # Check if an existing list of primes exists. 
     if os.path.exists('primes.txt'):
@@ -82,12 +85,14 @@ def main():
         start = get_last_prime() + 1
         new_file = False
         print('Found an existing file, starting from %d' % start)
+        fh.flush()
     else:
         # Start looking for primes from scratch.
         new_file = True
 
     if start >= end:
         print('Already finished.')
+        fh.flush()
         sys.exit(1)
        
     # Open the output file for appending.
@@ -106,6 +111,7 @@ def main():
     
     fh.close()
     print('Found %d primes during this run.' % total_primes)
+    fh.flush()
 
 if __name__ == '__main__':
     main()
