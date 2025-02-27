@@ -12,6 +12,8 @@
 #   Submit with indices 1,3,5,7,9
 #   qsub -J 1-10:2 submit.sh
 #
+# or place the -J as a PBS directive in this script as below.
+#
 # Author: Mike Lake
 
 # Note: The cpu, memory and time resources that you specify here 
@@ -20,6 +22,7 @@
 #PBS -l mem=5GB
 #PBS -l walltime=00:15:00 
 #PBS -N test
+#PBS -J 1-5
 
 # Here we define the number of integers to check 
 # within each individual array job. 
