@@ -40,7 +40,14 @@ def get_last_prime():
     except IOError:
         print('Error: Could not open existing file. Exiting.')
         sys.exit(1)
+    except IndexError:
+        # This would occur if the file exists but is empty,
+        # as then there is no "last line".
+        print('Error: Not enough lines in the file. Exiting.')
+        sys.exit(1)
     except ValueError:
+        # This can occur if the last line is an empty line, or 
+        # if the last line looks like a float e.g. "3.0".
         print('Error: Last line could not be converted to an integer. Exiting.')
         sys.exit(1)
 
