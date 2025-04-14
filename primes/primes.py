@@ -10,9 +10,12 @@
 # Output: primes.txt
 #
 # Author: Mike Lake
-# Date:   2020.08.01
+# Date:   2025.04.14
 
 import os, sys
+import functools
+# Turn off python's output buffering.
+print = functools.partial(print, flush=True)
 
 # Define a starting integer and a larger ending integer as a range,
 # within which to test for prime numbers.

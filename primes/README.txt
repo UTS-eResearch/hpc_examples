@@ -1,5 +1,5 @@
 README
-------
+======
 
 This directory contains a small python program to calculate prime numbers 
 within a specified range. There are also two PBS job submission scripts to 
@@ -17,6 +17,9 @@ submit this primes program to the PBS scheduling system.
 Your programs should always use the /scratch directory for reading and 
 writing large data files.
 
+Installing these Examples
+-------------------------
+
 Copy this entire directory to your own directory to test this out.
 
   $ cd
@@ -24,9 +27,14 @@ Copy this entire directory to your own directory to test this out.
   $ cp -r /shared/eresearch/pbs_job_examples/primes jobs/
   $ cd jobs/primes
 
-Read what primes.py does. It's designed to pick up where it left off.
+Read the program primes.py to understand what it does.
+The programs comments will tell you aproximately how long it will take to find
+the primes within a given range.
+This program is also designed to pick up where it left off.
 All of your programs should be able to do this. It's called checkpointing.
-Finding primes from 100,000 to 300,000 should take about 3 minutes.
+
+Running the Primes Program
+--------------------------
 
 Edit the submission scripts to include your own email in the script.
 
@@ -56,6 +64,27 @@ own submission scripts based on these.
 
 Remember: You should be using the /scratch directory for all large file reading and writing.
 
+A Note on Output Buffering in Python
+------------------------------------
+
+Python by default will buffer its output when it is not being used in an
+interactive environment. So if the program ends prematurely the full results
+that have been calculated might not get written to the output file. We do not
+want this behaviour. We want all results to be written immediately. 
+
+To turn off output buffering you can add these two lines to the top of the program:
+
+  import functools
+  print = functools.partial(print, flush=True)
+
+Or you can add this line to the PBS submission script just before you call your
+python program:
+
+  export PYTHONUNBUFFERED = 'True'
+
+Reference: "How to Flush the Output of the Python Print Function"
+https://realpython.com/python-flush-print-output/
+
 Mike Lake
-August 2020
+April 2025
 
