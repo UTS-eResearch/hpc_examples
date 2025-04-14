@@ -82,6 +82,13 @@ python program:
 
   export PYTHONUNBUFFERED = 'True'
 
+To see what happens if these lines are not added submit a job and, within a few seconds,
+run "qdel job_id" to end the job. You will probably see that the jobs output file is 
+empty. It would normally contain the output of the python program i.e.:
+
+    Prime Number Finder
+    Looking for prime numbers in the range 100000 to 200000 ...
+
 Reference: "How to Flush the Output of the Python Print Function"
 https://realpython.com/python-flush-print-output/
 
