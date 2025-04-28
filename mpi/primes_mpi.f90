@@ -49,9 +49,9 @@ PROGRAM PRIME
     ! MOD(M,N) calculates the remainder of the division of scalars M by N.
     ! e.g. MOD(17, 3) will output 2 as 17 divided by 3 has a remainder of 2.
     IF ( (MOD(ntasks,2).NE.0) .OR. (MOD(LIMIT,ntasks).NE.0) ) THEN
-         PRINT *, MOD(ntasks,2), MOD(LIMIT,ntasks)
+         ! PRINT *, 'DEBUG: ntasks/2 remainder=', MOD(ntasks,2), 'LIMIT/ntasks remainder=', MOD(LIMIT,ntasks)
          PRINT *, 'Error: this requires an even number of processors.'
-         PRINT *, 'Also this number of processors must be evenly divisible into ', LIMIT, '.'
+         PRINT *, 'Also the number of processors must be evenly divisible into ', LIMIT, '.'
          PRINT *, 'Try 4 or 8 etc.'
          CALL MPI_FINALIZE(ierr)
          STOP
