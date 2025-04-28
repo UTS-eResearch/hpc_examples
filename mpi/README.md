@@ -23,7 +23,11 @@ Compile serial FORTRAN programs with gfortran:
 
     $ gfortran primes_serial.f90 -o primes_serial
 
-Then just submit it as a PBS job:
+You would just run it like this:
+
+    $ ./primes_serial
+
+But it should be run by submiting it as a PBS job:
 
     $ qsub submit_primes_serial.sh
 
@@ -39,10 +43,22 @@ Now we can compile using the MPI FORTRAN parallel compiler:
 
     $ mpif90 primes_mpi.f90 -o primes_mpi -lmpi
 
-To run an MPI program we then need to use "mpiexec" to run our program 
-in the PBS submission script. 
+To run an MPI program we then need to use "mpiexec" to run our program.
+We can't just run it like this:
 
-Submit as a PBS job. There are two job submission script examples.
+    $ ./primes_mpi
+      Error: this requires an even number of processors.
+      Also the number of processors must be evenly divisible into    100000000 .
+      Try 4 or 8 etc.
+
+When we use the mpiexec we can also specify how many cores will be used to run the program.
+
+    $ mpiexec primes_mpi           <== This will default to using all the cores.
+    $ mpiexec -np 4 ./primes_mpi   <== This will use 4 cores.
+    $ mpiexec -np 8 ./primes_mpi   <== This will use 8 cores.
+
+However they should be run within a PBS submission script!
+There are two job submission script examples.
 
     $ qsub submit_primes_mpi_single_node.sh
 
@@ -103,8 +119,8 @@ You will notice in the submission scripts that I have incuded a line:
 "cat $PBS_NODEFILE". This can be useful but its use is not covered here.
 You can leave out this line if you wish.
 
-Reference: PBS Professional 2021.1 User's Guide, "4.7 Specifying Job Placement", 
-page UG-64.
+Reference: PBS Professional 2024.1 User's Guide, "4.7 Specifying Job Placement", 
+page UG-66.
 
 Mike Lake    
 July 2023
