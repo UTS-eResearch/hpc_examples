@@ -96,6 +96,9 @@ Using primes_mpi with the following MPI processes takes:
     ncpus=8:mpiprocs=8      9 seconds
     ncpus=16:mpiprocs=16    2 seconds
 
+Also you will find that using two chunks of compute, each with 4 cores, 
+takes about the same amount of time as one chunk using 8 cores.
+
     select=2:ncpus=4:mpiprocs=4  9 seconds
 
 ## MPI Job Placement on Nodes
