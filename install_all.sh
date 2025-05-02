@@ -33,7 +33,7 @@ fi
 
 cp README.yaml ${dest}/
 
-for d in mpi primes ; do
+for d in mpi primes_using_python ; do
     pushd $d
     ./install.sh
     popd
