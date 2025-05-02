@@ -5,7 +5,7 @@
 # Author: Mike Lake
 
 # Set the resource requirements; 1 CPU, 5 GB memory and 5 minutes wall time.
-#PBS -N primes
+#PBS -N primes_test
 #PBS -l ncpus=1
 #PBS -l mem=5GB
 #PBS -l walltime=00:05:00

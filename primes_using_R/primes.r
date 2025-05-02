@@ -67,11 +67,16 @@ for (i in start:end) {
         total_primes = total_primes + 1
         #primes_array = c(primes_array, i)
         writeLines(paste(i), dataConn)
+        flush(dataConn)
     }
     # Every "N" lines print progress.
     if (i%%1000 == 0) {
         writeLines(paste(i), logConn) # Prints progress to log file.
+        flush(logConn)
+        # We do not want to write to the console as we will only see that
+        # after the PBS job has finished.
         #cat (i, ' ') # Prints progress to console.
+        #flush.console(); Sys.sleep(1)
     } 
 }
 
