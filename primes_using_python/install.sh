@@ -1,6 +1,6 @@
 #!/bin/bash
 
-dest='/shared/eresearch/pbs_job_examples/primes/'
+dest='/shared/eresearch/pbs_job_examples/primes_using_python/'
 mkdir -p $dest
 
 #pbs_script='primes_job.sh'

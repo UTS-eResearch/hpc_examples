@@ -24,8 +24,8 @@ Copy this entire directory to your own directory to test this out.
 
   $ cd
   $ mkdir jobs
-  $ cp -r /shared/eresearch/pbs_job_examples/primes jobs/
-  $ cd jobs/primes
+  $ cp -r /shared/eresearch/pbs_job_examples/primes_using_python jobs/
+  $ cd jobs/primes_using_python
 
 Read the program primes.py to understand what it does.
 The programs comments will tell you aproximately how long it will take to find
