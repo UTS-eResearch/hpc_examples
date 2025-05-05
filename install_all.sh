@@ -34,8 +34,9 @@ fi
 cp README.yaml ${dest}/
 
 for d in checkpointing_dmtcp job_arrays matlab mpi overtime primes_using_python primes_using_R profiling ; do
-    pushd $d
+    echo "${d} "
+    pushd $d > /dev/null
     ./install.sh
-    popd
+    popd >/dev/null
 done
 
