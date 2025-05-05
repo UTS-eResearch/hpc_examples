@@ -1,8 +1,6 @@
 README
 ------
 
-Version: THIS_DATE
-
 This describes how to checkpoint a program and to use a self submitting
 script to run that program for longer than the maximum wall time allowed. 
 
