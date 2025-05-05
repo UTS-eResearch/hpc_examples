@@ -44,8 +44,8 @@
 #PBS -l walltime=0:02:00
 #PBS -v NJOBS,NJOB
 #PBS -q smallq
-#PBS -m abe 
-#PBS -M Your.Email@uts.edu.au
+##PBS -m abe 
+##PBS -M Your.Email@uts.edu.au
 
 myjobdir=$HOME/jobs/checkpoint
 cd $myjobdir

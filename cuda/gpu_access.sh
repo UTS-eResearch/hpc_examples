@@ -19,8 +19,8 @@
 #PBS -l walltime=00:01:00
 
 # Set your email.
-#PBS -m abe 
-#PBS -M Your.Email@uts.edu.au
+##PBS -m abe 
+##PBS -M Your.Email@uts.edu.au
 
 # Set the node to start an interactive session on.
 #PBS -l host=hpcnode10
