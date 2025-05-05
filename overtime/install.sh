@@ -5,5 +5,5 @@ mkdir -p $dest
 
 cp README.txt $dest
 cp clean.sh $dest 
-cp primes.p $desty
+cp primes.py $desty
 
