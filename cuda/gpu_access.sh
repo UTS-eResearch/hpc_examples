@@ -20,7 +20,7 @@
 
 # Set your email.
 #PBS -m abe 
-#PBS -M Mike.Lake@uts.edu.au
+#PBS -M Your.Email@uts.edu.au
 
 # Set the node to start an interactive session on.
 #PBS -l host=hpcnode10

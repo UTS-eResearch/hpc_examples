@@ -8,8 +8,8 @@
 #PBS -q smallq
 #PBS -l host=ermdc23
 
-#PBS -m abe 
-#PBS -M Mike.Lake@uts.edu.au
+##PBS -m abe 
+##PBS -M Your.Email@uts.edu.au
 
 cd ${PBS_O_WORKDIR}
 source ../set_cuda_env.sh
