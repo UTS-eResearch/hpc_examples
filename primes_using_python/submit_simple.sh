@@ -27,7 +27,7 @@
 # Send email on abort, begin and end.
 # CHANGE the below to your email and remove the extra # from the start of the next two lines.
 ##PBS -m abe
-##PBS -M your.email@uts.edu.au
+##PBS -M Your.Email@uts.edu.au
 
 # In this example there are no input files.
 # You just change directory to where your program is and run it.

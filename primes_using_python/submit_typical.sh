@@ -27,7 +27,7 @@
 # CHANGE your.email to your email and remove the extra # from the start of the next two lines.
 # More than one # characters before a PBS line acts to comment out that line.
 ##PBS -m abe
-##PBS -M your.email@uts.edu.au
+##PBS -M Your.Email@uts.edu.au
 
 ###################################
 # Setup any input files for the run
