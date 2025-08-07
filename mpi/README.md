@@ -8,8 +8,6 @@ The MPI examples here are my own versions of various programs.
     clean.sh                  Remove PBS .o and .e output files.
     compile_all.sh            Compile all the programs.
 
-    submit_python_version.sh  Just gets the Python version number using MPI.
-
     primes_serial.f90         FORTRAN program to calculate prime numbers, not using MPI.
     submit_primes_serial.sh   PBS submission script.
 
