@@ -2,7 +2,7 @@
 
 # This script will compile and build two Fortran primes programs.
 
-# Load the latest OenMPI module.
+# Load the latest OpenMPI module.
 module load openmpi-latest
 
 # Compile using gfortran and output the executable primes_serial
