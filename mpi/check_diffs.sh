@@ -8,7 +8,7 @@ for f in $installed/*; do
     diff $f ${f##*/} > /dev/null
     if [ $? -ne 0 ]; then
         # Files differ
-        echo -e "\n=== $f ==="
+        echo -e "\n========= $f ========="
         # We just use sed to indent the diff a bit.
         diff $f ${f##*/} | sed 's/^/  /'
     fi
