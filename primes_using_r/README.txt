@@ -1,5 +1,5 @@
 README
-=====
+======
 
 This directory contains a small R program to calculate prime numbers 
 within a specified range. There is also a PBS job submission script
@@ -18,6 +18,6 @@ Copy this entire directory to your own directory to test this out.
 
   $ cd
   $ mkdir jobs
-  $ cp -r /shared/eresearch/pbs_job_examples/primes_using_R jobs/
-  $ cd jobs/primes_using_R
+  $ cp -r /shared/eresearch/pbs_job_examples/primes_using_r jobs/
+  $ cd jobs/primes_using_r
 
