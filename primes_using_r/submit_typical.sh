@@ -85,7 +85,7 @@ Rscript ${PBS_O_WORKDIR}/primes.r 100000 200000
 #####################################################
 
 # Move your data back to your working directory.
-mv ${SCRATCH}/primes.txt ${PBS_O_WORKDIR}
+mv ${SCRATCH}/primes.* ${PBS_O_WORKDIR}
 
 # We don't want to have old scratch directories hanging around
 # so after copying your data back, remove the scratch directory.
