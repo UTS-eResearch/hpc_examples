@@ -1,8 +1,22 @@
 #!/bin/bash
 
-# Run this as: qsub submit.sh
+# Example of the simplest qsub submission script for the primes program.
+# Please read submit_typical.sh which is more typical of what your
+# submission script should be like.
+#
+# Important:
+#   If you wish this script to email you when the job has started and ended
+#   then you will need to remove the extra # from the start of the two lines
+#   ##PBS -m and ##PBS -M and edit the latter to your own email.
+#
+# Run this as: qsub submit_simple.sh
 #
 # Author: Mike Lake
+
+##################
+# PBS commands must come at the top of this script,
+# before any other commands.
+#################
 
 # Set the resource requirements; 1 CPU, 5 GB memory and 5 minutes wall time.
 #PBS -N primes
