@@ -1,6 +1,6 @@
 #!/bin/bash
 
-dest='/shared/eresearch/pbs_job_examples/gpu/'
+dest='/shared/eresearch/pbs_job_examples/gpu_using_python/'
 mkdir -p $dest
 
 # Copy the files.
