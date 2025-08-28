@@ -17,7 +17,7 @@ except:
     sys.exit()
 
 # Get the device data. 
-print '\nDaviceData: '
+print '\nDeviceData: '
 dd = tools.DeviceData()
 print dd.__dict__
 
