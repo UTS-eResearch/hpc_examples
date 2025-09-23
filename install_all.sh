@@ -33,7 +33,12 @@ fi
 
 cp README.yaml ${dest}/
 
-for d in checkpointing_dmtcp job_arrays matlab mpi overtime primes_using_python primes_using_r profiling ; do
+# Note: The cuda directory in here is just for Mikes testing at this stage
+# so its not copied up to destination.
+
+for d in checkpointing_dmtcp job_arrays matlab mpi overtime \
+      primes_using_python primes_using_r \
+      profiling ; do
     echo "${d} "
     pushd $d > /dev/null
     ./install.sh
