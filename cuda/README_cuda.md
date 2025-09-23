@@ -1,13 +1,10 @@
-
 How to Compile and Run an FFT Example using CUDA Code on a GPU
 ==============================================================
 
 Author: Mike Lake
 Version: 2015.01.22
 
-
 nvcc warning : The 'compute_20', 'sm_20', and 'sm_21' architectures are deprecated, and may be removed in a future release (Use -Wno-deprecated-gpu-targets to suppress warning).
-
 
 Introduction
 ------------
@@ -25,7 +22,6 @@ that we do not have so have appended _UTS to the directory name.
 Hence, you will find the code in this directory under simpleCUFFT_UTS/
 
 Note: these examples can only be compiled on a GPU node.
-
 
 Description of Files and Directories 
 ------------------------------------
@@ -45,7 +41,6 @@ How to use these files is described below.
 Other Files and Directories: 
 "common" is just a copy of the /usr/local/cuda/samples/common/ directory.
 But note: this directory is only found if you are logged into a GPU node!
-
 
 1. Login to a GPU Node 
 ----------------------
@@ -77,7 +72,6 @@ Now run a PBS interactive job to get onto a GPU node:
 
 You will now have a shell on a GPU node. 
 
-
 2. Compile and Build your CUDA Code
 -----------------------------------
 
@@ -102,12 +96,8 @@ First it creates the object file simpleCUFFT.o
 Then it links that with libs to create the executable. 
 /usr/local/cuda-5.5/bin/nvcc -ccbin g++ -m64 -o simpleCUFFT simpleCUFFT.o -lcufft
 
-
-
-
 This will have created an executable program "simpleCUFFT". Don't run this yet.
 We have to run it via a normal job submission script. 
-
 
 3. Submit your Job to qsub 
 --------------------------
