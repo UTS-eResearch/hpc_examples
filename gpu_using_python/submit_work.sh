@@ -9,7 +9,7 @@
 #PBS -N GPUTest
 #PBS -l ngpus=1
 #PBS -l mem=10GB
-#PBS -l walltime=00:10:00
+#PBS -l walltime=00:15:00
 #PBS -q gpuq
 #PBS -m abe
 #PBS -M mike.lake@uts.edu.au

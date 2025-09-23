@@ -52,13 +52,13 @@ def create_matrices():
     # The L40 supports 48 GB of mem. 
     # Any bigger than 70,000 and we will run out of memory.
     # 50,000 is OK
-    size = 50000
-    print('Start time', datetime.datetime.now().strftime('%M:%S'))
+    size = 40000
+    print('Start time, creating matrices', datetime.datetime.now().strftime('%M:%S'))
     print('  Loading matrix A') 
     a = torch.randn(size,size).to('cuda')
     print('  Loading matrix B') 
     b = torch.randn(size,size).to('cuda')
-    print('End time', datetime.datetime.now().strftime('%M:%S'))
+    print('End time, creating matrices', datetime.datetime.now().strftime('%M:%S'))
     return (a, b)
 
 def multiply_matrices(a, b, job_num):
@@ -66,10 +66,11 @@ def multiply_matrices(a, b, job_num):
     fh = open('output_%s.log' % job_num, 'w')
     date_time = datetime.datetime.now().strftime('%Y-%m-%d at %I:%M:%S %p')
     fh.write('Job %s\n' % job_num)
-    fh.write('Started at %s\n' % date_time)
+    fh.write('Started multipying at %s\n' % date_time)
+    fh.flush()
     # For this many iterations multiply these two matrices repeatedly.
     # This is just an easy way to use up GPU time.
-    for n in range(1,1001):
+    for n in range(1,2001):
         # Do one tensor matrix multiply.
         torch.matmul(a, b, out=None)
         # For every 100th iteration print this n to the log file.
@@ -83,7 +84,7 @@ def multiply_matrices(a, b, job_num):
 
     # Finish up.
     date_time = datetime.datetime.now().strftime('%Y-%m-%d at %I:%M:%S %p')
-    fh.write('\nEnded at %s\n' % date_time)
+    fh.write('\nEnded multiplying at %s\n' % date_time)
     fh.flush()
     fh.write('\n')
     fh.close()
