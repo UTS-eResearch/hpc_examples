@@ -8,6 +8,13 @@ echo ''
 echo "=== Install All Examples to Cluster ==="
 echo ''
 
+if [ ! -d $dest ]; then
+    echo "Directory $dest was not found."
+    echo "Are you on the HPC login node?"
+    echo "Exiting."
+    exit 0
+fi
+
 echo '------ GIT Status ------'
 git st
 
