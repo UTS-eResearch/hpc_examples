@@ -46,7 +46,7 @@ We can't just run it like this:
 
     $ ./primes_mpi
       Error: this requires an even number of processors.
-      Also the number of processors must be evenly divisible into    100000000 .
+      Also the number of processors must be evenly divisible into 100,000,000 .
       Try 4 or 8 etc.
 
 When we use the mpiexec we can also specify how many cores will be used to run the program.
@@ -79,7 +79,7 @@ If you log into one of those nodes you will see:
 
 ## Typical Results
 
-The list of prime found will be in the file primes.dat
+The list of prime found will be in the file primes.txt
 
 Find all primes up to 100,000,000
 
