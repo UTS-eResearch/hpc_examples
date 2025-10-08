@@ -51,7 +51,7 @@ def create_matrices():
     # Create two random square matrices of the specified size.
     # The L40 supports 48 GB of mem. 
     # Any bigger than 70,000 and we will run out of memory.
-    # 50,000 is OK
+    # 50,000 is prob the max.
     size = 40000
     print('Start time, creating matrices', datetime.datetime.now().strftime('%M:%S'))
     print('  Loading matrix A') 
@@ -70,16 +70,18 @@ def multiply_matrices(a, b, job_num):
     fh.flush()
     # For this many iterations multiply these two matrices repeatedly.
     # This is just an easy way to use up GPU time.
-    for n in range(1,2001):
+    for n in range(0,501):
         # Do one tensor matrix multiply.
         torch.matmul(a, b, out=None)
         # For every 100th iteration print this n to the log file.
         # By tailing this logfile we can see how far we are into this loop.
         # We don't use stdout as we don't get this output until the end.
-        if n % 100 == 0:
-            print('%d ' % n)
+        if n % 50 == 0:
+            print('%d  ' % n)
             fh.write('%d ' % n)
             fh.flush()
+            # This delay here is only for Mike to be able to demo 
+            # how this programs runs on a GPU.
             time.sleep(2)
 
     # Finish up.
