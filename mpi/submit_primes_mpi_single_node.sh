@@ -1,7 +1,7 @@
 #!/bin/bash
 
-# This will run the primes finding program on one node using 8 cores.
-# We will run 8 MPI processes across those 8 cores.
+# This will run the primes finding program on one node using 4 cores.
+# i.e. we will run 4 MPI processes across those 4 cores.
 
 #PBS -N primes
 #PBS -l walltime=00:10:00
