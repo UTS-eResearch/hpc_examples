@@ -17,13 +17,17 @@
 !   pc                     = prime counter
 !   foundone               = most recent prime found
 !
-! MRL Notes: original was parameter(LIMIT=1000000000)
+! MRL Notes: Original was parameter(LIMIT=1000000000)
+!            i.e. 1,000 million.
+!            Also changed print formatting a bit. 
 ! ************************************************************************
 
     program prime
 
     integer LIMIT, PRINT
+    ! Find primes up to 100,000,000 i.e. 100 million.
     parameter(LIMIT=100000000)
+    ! After each set of 10,000,000 numbers are scanned, print the number of primes found.
     parameter(PRINT=10000000)
     102 FORMAT(I9)
 
@@ -31,17 +35,16 @@
     logical result
     open(1, file = 'primes.dat', status = 'replace')
     print *,'Starting. Numbers to be scanned =',LIMIT
-!   Assume first four primes are counted here.
+    ! Assume the first four primes are counted here.
     pc = 4
     do n=11, LIMIT, 2
        call isprime(n,result)
        if (result .eqv. .true.) then
           pc = pc + 1
           foundone = n
-!         ****** Optional: print each prime as it is found. ******
-!         print *, foundone
+          ! ****** Uncomment this to print each prime as it is found.
+          ! print *, foundone
           write(1,102) foundone
-!         ******
        endif
        if (mod(n-1,PRINT).eq.0) then
           print *,'Numbers scanned =',n-1,' Primes found = ',pc
@@ -67,9 +70,10 @@
        enddo
        result = .true.
        return
-!   Assume first four primes are counted elsewhere. Forget everything else.
+    ! Assume the first four primes are counted elsewhere. Forget everything else.
     else
       result = .false.
       return
     endif
     end
+
