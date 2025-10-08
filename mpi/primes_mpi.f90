@@ -27,12 +27,13 @@
 !   mystart  = where to start calculating
 !   stride   = calculate every nth number
  
-PROGRAM PRIME
+PROGRAM primes
     IMPLICIT NONE
     ! INTEGER mpi_comm_world, mpi_integer, mpi_max, mpi_sum, MPI_WTIME
     INCLUDE 'mpif.h'
  
-    INTEGER LIMIT , FIRST
+    INTEGER LIMIT, FIRST
+    ! Find primes up to 100,000,000 i.e. 100 million.
     PARAMETER (LIMIT=100000000)
     PARAMETER (FIRST=0)
     102 FORMAT(I9)
@@ -41,7 +42,7 @@ PROGRAM PRIME
         maxprime, mystart, stride
     DOUBLE PRECISION start_time, end_time
     LOGICAL result
-    open(1, file = 'primes.dat', status = 'replace')
+    open(1, file = 'primes.txt', status = 'replace')
  
     CALL MPI_INIT(ierr)
     CALL MPI_COMM_RANK(mpi_comm_world, rank, ierr)
@@ -137,3 +138,4 @@ SUBROUTINE ISPRIME (N, Result)
         RETURN
     ENDIF
     END
+

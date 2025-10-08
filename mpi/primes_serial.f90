@@ -21,18 +21,18 @@
 !            Changed print formatting a bit. 
 ! ************************************************************************
 
-    program prime
+    program primes
 
     integer LIMIT, PRINT
-    ! Find primes up to 1000,000,000 i.e. 1000 million.
-    parameter(LIMIT=1000000000)
-    ! After each set of 100,000,000 numbers are scanned, print the number of primes found.
-    parameter(PRINT=100000000)
+    ! Find primes up to 100,000,000 i.e. 100 million.
+    parameter(LIMIT=100000000)
+    ! After each set of 10,000,000 numbers are scanned, print the number of primes found.
+    parameter(PRINT=10000000)
     102 FORMAT(I9)
 
     integer n, pc, foundone
     logical result
-    open(1, file = 'primes.dat', status = 'replace')
+    open(1, file = 'primes.txt', status = 'replace')
     print *,'Starting. Numbers to be scanned =',LIMIT
     ! Assume the first four primes are counted here.
     pc = 4
