@@ -17,18 +17,17 @@
 !   pc                     = prime counter
 !   foundone               = most recent prime found
 !
-! MRL Notes: Original was parameter(LIMIT=1000000000)
-!            i.e. 1,000 million.
-!            Also changed print formatting a bit. 
+! MRL Notes: Original is parameter(LIMIT=1000000000) i.e. 1,000 million.
+!            Changed print formatting a bit. 
 ! ************************************************************************
 
     program prime
 
     integer LIMIT, PRINT
-    ! Find primes up to 100,000,000 i.e. 100 million.
-    parameter(LIMIT=100000000)
-    ! After each set of 10,000,000 numbers are scanned, print the number of primes found.
-    parameter(PRINT=10000000)
+    ! Find primes up to 1000,000,000 i.e. 1000 million.
+    parameter(LIMIT=1000000000)
+    ! After each set of 100,000,000 numbers are scanned, print the number of primes found.
+    parameter(PRINT=100000000)
     102 FORMAT(I9)
 
     integer n, pc, foundone
