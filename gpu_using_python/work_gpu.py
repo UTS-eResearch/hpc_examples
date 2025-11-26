@@ -70,7 +70,7 @@ def multiply_matrices(a, b, job_num):
     fh.flush()
     # For this many iterations multiply these two matrices repeatedly.
     # This is just an easy way to use up GPU time.
-    for n in range(0,501):
+    for n in range(0,301):
         # Do one tensor matrix multiply.
         torch.matmul(a, b, out=None)
         # For every 100th iteration print this n to the log file.
