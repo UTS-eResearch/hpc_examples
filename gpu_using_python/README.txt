@@ -6,8 +6,13 @@ README
 
     $ cd gpu_using_python
 
-    $ source source_me.sh 
-    You can now run nvitop
+Login to a node that has a GPU.
+
+    gpu_node$ source source_me.sh 
+
+You can now run nvitop if you have installed it.
+
     (pytorch) hpcnode11 gpu_using_python/$
 
+Otherwise run nvidia-smi
 
