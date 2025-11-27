@@ -22,7 +22,7 @@ print = functools.partial(print, flush=True)
 # A range of 100,000 to 200,000 will take about 1.5 minutes and finds  8392 primes.
 # A range of 100,000 to 300,000 will take about 4   minutes and finds 16405 primes.
 # A range of 100,000 to 500,000 will take about 10  minutes and finds 31946 primes.
-start = 100000
+start = 0
 end   = 200000
 
 ###########
