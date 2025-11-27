@@ -12,7 +12,7 @@
 #PBS -l walltime=00:15:00
 #PBS -q gpuq
 #PBS -m abe
-#PBS -M mike.lake@uts.edu.au
+#PBS -M Your.Email@uts.edu.au
 
 # Normally you do not specify a node.
 ##PBS -l host=hpcnode15
