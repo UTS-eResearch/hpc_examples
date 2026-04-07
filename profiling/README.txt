@@ -11,7 +11,7 @@ modified so that it demonstrates how to profile a python program.
 Copy this entire directory to your own directory to test this out.
 
   $ cp -r /shared/eresearch/pbs_job_examples/profiling .
-  $ cd profilinga
+  $ cd profiling
 
 You will also need to create a Python 3 virtual environment and install "pycallgraph2" 
 using "pip install pycallgraph2". Then start this Python 3 virtual env.
